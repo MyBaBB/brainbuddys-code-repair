@@ -14,7 +14,7 @@ const AMainFrontPage = () => {
                            <img src={BlankBrain} alt="Blank Brain Cover Image" className="relative"/>
                           
                        
-                </div>
+              </div>
     </div>
   )
 }
