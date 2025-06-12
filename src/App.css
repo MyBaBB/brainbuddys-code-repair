@@ -1,0 +1,7 @@
+#root {
+  background-color:white;
+  overflow: hidden;
+}
+* {
+  box-sizing: border-box;
+}
