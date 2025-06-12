@@ -3,17 +3,13 @@ import AMainFrontPage from "./Pages/AMainFrontPageFolder/AMainFrontPage";
 import "./App.css";
 import Zenith from "./Pages/Zenith";
 
-
-
 const App = () => {
   return (
     <main className="bg-slate-900">
       <Router>
-     
         <Routes>
           <Route path="/" element={<Zenith />} />
           <Route path="/AMainFrontPage" element={<AMainFrontPage />} />
-          
         </Routes>
       </Router>
     </main>
