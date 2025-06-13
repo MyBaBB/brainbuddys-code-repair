@@ -1,10 +1,18 @@
  
+ 
+  # Brain Buddys 👉 https://brainbuddys.com 
+<p align="center"> 
+   A General Purpose Private Website 
+</p>
+ <p align="center"> 
+A Tech Support Channel
+</p>
 
+<p align="center">
+  <img src="public/BrainBuddy580x580.png" alt="BRAIN BUDDYS">
+</p>
  
 
-* This is a repo for custom pages for the wordpress website hosted by Brett's Web Development at https://mybabb.com  
-
-![BRAIN BUDDYS](public/readme.jpg)
  
 
  
