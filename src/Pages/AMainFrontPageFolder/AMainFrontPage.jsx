@@ -1,7 +1,7 @@
 import "./AMainFrontPage.jsx"
 import "./AMainFrontPage.css";
 import React from "react";
-import BlankBrain from "/BrainBuddy580x580.png"; // Adjust the path as needed
+import BlankBrain from "/BrainBuddy580x580.webp"; // Adjust the path as needed
 
 const BrainBuddys = () => {
   return (
