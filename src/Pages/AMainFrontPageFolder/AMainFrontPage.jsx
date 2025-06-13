@@ -11,7 +11,7 @@ const BrainBuddys = () => {
         <header className="brainBuddysTitleBox absolute w-full h-fit p-2 bottom-[2.1rem] z-10">
           <a href="https://mybabb.com/TechSupportPage" target="_blank" rel="noopener noreferrer">
           <h1
-            className="BrainBuddysH1 relative flex m-auto w-fit text-[2rem] z-10 
+            className="BrainBuddysH1 relative flex m-auto w-fit text-[1rem] sm:text-2xl z-10 
                        font-PTSerif-Bold text-white p-3 rounded-xl bg-[#1479ea]"
           >
             Brain Buddy&apos;s
