@@ -6,7 +6,7 @@ import BlankBrain from "/BrainBuddy580x580.webp"; // Adjust the path as needed
 const BrainBuddys = () => {
   return (
     <div className="relative flex items-center justify-center h-full w-full   "> 
-    <section className="relative flex-col xl:mt-[1.3rem] items-center justify-center h-full w-fit m-auto   z-1">
+    <section className="relative flex-col xl:mt-[1.3rem] xxl:mt-[7.3rem] items-center justify-center h-full w-fit m-auto   z-1">
       <article className="relative  ">
         <header className="brainBuddysTitleBox absolute w-full h-fit p-2 bottom-[2.1rem] z-10">
           <a href="https://mybabb.com/TechSupportPage" target="_blank" rel="noopener noreferrer">
