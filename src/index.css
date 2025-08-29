@@ -18,6 +18,12 @@
   font-family: "ArchivoBlack-Regular";
   src: url(../GoogleFonts/ArchivoBlack-Regular.ttf);
 }
+
+@font-face {
+  font-family: "Bronco-Bandit";
+  src: url(../GoogleFonts/Bronco-Bandit.ttf);
+}
+
 @font-face {
   font-family: "Blackbeard-ld7V";
   src: url(../GoogleFonts/Blackbeard-ld7V.ttf);
@@ -53,6 +59,21 @@
   src: url(../GoogleFonts/Creepster-Regular.ttf);
 }
 @font-face {
+  font-family: "CYRON_Metallic-SVG-OTF";
+  src: url(../GoogleFonts/CYRON_Metallic-SVG-OTF.otf);
+}
+
+ @font-face {
+   font-family: "CYRON_Metallic-SVG-TTF";
+   src: url(../GoogleFonts/CYRON_Metallic-SVG-TTF.ttf);
+ }
+
+ @font-face {
+   font-family: "CYRON_Metallic-SVG-Woff2";
+   src: url(../GoogleFonts/CYRON_Metallic-SVG-Woff2.woff2);
+}
+
+@font-face {
   font-family: "DMSerifDisplay-Italic";
   src: url(../GoogleFonts/DMSerifDisplay-Italic.ttf);
 }
@@ -68,6 +89,10 @@
 @font-face {
   font-family: "Iceberg-Regular";
   src: url(../GoogleFonts/Iceberg-Regular.ttf);
+}
+@font-face {
+  font-family: "Gevenda-Regular";
+  src: url(../GoogleFonts/Gevenda-Regular.ttf);
 }
 @font-face {
   font-family: "HoltwoodOneSC-Regular";

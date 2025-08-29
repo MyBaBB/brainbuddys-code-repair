@@ -13,10 +13,12 @@ const BrainBuddys = () => {
         <header className="brainBuddysTitleBox absolute w-full h-fit p-2 bottom-[2.1rem] z-10">
           <a href="https://mybabb.com/TechSupportPage" target="_blank" rel="noopener noreferrer">
           <h1
-            className="BrainBuddysH1 relative flex m-auto w-fit text-[1rem] sm:text-2xl z-10 
-                       font-PTSerif-Bold text-white p-3 rounded-xl bg-[#1479ea]"
+            className="BrainBuddysH1  relative flex m-auto w-fit text-[1rem] sm:text-4xl z-10 
+                       text-center rounded-xl p-2  bg-blue-500
+                        font-PTSerif-Bold "
           >
-            Brain Buddy&apos;s
+            <span>Brain &nbsp;</span>
+            <span>Buddy&apos;s</span>
           </h1>
           </a>
         </header>

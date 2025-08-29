@@ -46,15 +46,20 @@ export default {
 'Blackbeard-ld7V' : ['Blackbeard-ld7V', 'cursive'],
 'BlackOpsOne-Regular': ['BlackOpsOne-Regular', 'cursive'],
 'Borel-Regular': ['Borel-Regular', 'sans-serif'],
+"Bronco-Bandit": ['Bronco-Bandit', 'cursive'],
 'Caprasimo-Regular': ['Caprasimo-Regular', 'cursive'],
 'Changa-Regular': ['Changa-Regular', 'sans-serif'],
 'Changa-VariableFont_wght': ['Changa-VariableFont_wght', 'sans-serif'],
 'ChunkFive-Regular': ['ChunkFive-Regular', 'sans-serif'],
 'Creepster-Regular': ['Creepster-Regular', 'cursive'],
+'CYRON_Metallic-SVG-OTF': ['CYRON_Metallic-SVG-OTF', 'sans-serif'],
+'CYRON_Metallic-SVG-TTF': ['CYRON_Metallic-SVG-TTF', 'sans-serif'],
+'CYRON_Metallic-SVG-Woff2': ['CYRON_Metallic-SVG-Woff2', 'sans-serif'],
 'DMSerifDisplay-Italic': ['DMSerifDisplay-Italic', 'serif'],
 'DMSerifDisplay-Regular': ['DMSerifDisplay-Regular', 'serif'],
 'DMSerifDisplay': ['DM Serif Display-italic', 'serif'],
 'EmilysCandy-Regular': ['EmilysCandy-Regular', 'cursive'],
+'Gevenda-Regular': ['Gevenda-Regular', 'sans-serif'],
 'HoltwoodOneSC-Regular': ['HoltwoodOneSC-Regular', 'sans-serif'],
 'HoltwoodOneSC': ['Holtwood One SC', 'sans-serif'],
 'Iceberg-Regular': ['Iceberg-Regular', 'cursive'],
@@ -84,8 +89,6 @@ export default {
   'Sixtyfour-Regular-VariableFont': ['Sixtyfour-Regular-VariableFont', 'cursive'],
   'Sixtyfour-Regular': ['Sixtyfour-Regular', 'cursive'],
   'Yellowtail-Regular': ['Yellowtail-Regular', 'cursive'],
-
-
 },
 
   screens: {
