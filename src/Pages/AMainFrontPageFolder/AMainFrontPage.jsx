@@ -7,11 +7,12 @@ import BlankBrain from "/BrainBuddy580x580.webp"; // Adjust the path as needed
 const BrainBuddys = () => {
   return (
     <div className="relative flex items-center justify-center h-screen w-full   "> 
+     <a href="https://mybabb.com/TechSupportPage" target="_blank" rel="noopener noreferrer">
     <section className="relative flex-col items-center justify-center h-fit w-fit m-auto   z-1
                     ">
       <article className="relative  ">
         <header className="brainBuddysTitleBox absolute w-full h-fit p-2 bottom-[2.1rem] z-10">
-          <a href="https://mybabb.com/TechSupportPage" target="_blank" rel="noopener noreferrer">
+         
           <h1
             className="BrainBuddysH1  relative flex m-auto w-fit text-[1rem] sm:text-4xl z-10 
                        text-center rounded-xl p-2  bg-blue-500
@@ -20,7 +21,7 @@ const BrainBuddys = () => {
             <span>Brain &nbsp;</span>
             <span>Buddy&apos;s</span>
           </h1>
-          </a>
+          
         </header>
         <img src={BlankBrain} alt="Blank Brain Cover Image" className="relative m-auto" />
 
@@ -31,6 +32,7 @@ const BrainBuddys = () => {
         </p>
       </article>
     </section>
+ </a>
     </div>
   );
 };
