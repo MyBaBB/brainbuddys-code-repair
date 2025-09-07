@@ -3,6 +3,7 @@ import "./AMainFrontPage.css";
 // eslint-disable-next-line no-unused-vars
 import React from "react";
 import BlankBrain from "/BrainBuddy580x580.webp"; // Adjust the path as needed
+import  LazyDisplayComponent from "./FrontPageComponents/DisplayComponentFolder/LazyDisplayComponent.jsx"
 
 const BrainBuddys = () => {
   return (
@@ -11,13 +12,13 @@ const BrainBuddys = () => {
     <section className="relative flex-col items-center justify-center h-fit w-fit m-auto   z-1
                     ">
       <article className="relative  ">
-        <header className="brainBuddysTitleBox absolute w-full h-fit p-2 bottom-[2.1rem] z-10">
-         
-          <h1
-            className="BrainBuddysH1  relative flex m-auto w-fit text-[1rem] sm:text-4xl z-10 
-                       text-center rounded-xl p-2  bg-blue-500
-                        font-PTSerif-Bold "
-          >
+        <header className="brainBuddysTitleBox absolute w-full h-fit p-2 bottom-[3.9rem] z-10">
+          <LazyDisplayComponent />
+            <h1
+              className="BrainBuddysH1  relative flex m-auto w-fit text-[1rem] sm:text-4xl z-10 
+                         text-center rounded-xl p-2  bg-blue-500
+                          font-PTSerif-Bold "
+            >
             <span>Brain &nbsp;</span>
             <span>Buddy&apos;s</span>
           </h1>

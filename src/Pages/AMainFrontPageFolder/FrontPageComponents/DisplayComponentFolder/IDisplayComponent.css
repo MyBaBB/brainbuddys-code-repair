@@ -1,0 +1,44 @@
+.canvasWrapper {
+  width: 350px;
+  height: 350px;
+
+  z-index: -1;
+}
+@media only screen and (max-width: 440px) {
+  .displayCanvasWrapper {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0 auto;
+    margin-top: 10rem;
+    z-index: 0;
+    width: 230px;
+    height: 230px;
+  }
+}
+
+.displayCanvasWrapper {
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  display: flex;
+  margin: 0 auto;
+  margin-top: 10rem;
+  z-index: 0;
+  width: 400px;
+  height: 400px;
+}
+
+canvas {
+  position: relative;
+  display: flex;
+  justify-content: center;
+}
+
+.canvasBgColor {
+  position: relative;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+}
