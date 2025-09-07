@@ -1,7 +1,8 @@
 .BrainBuddysH1 {
-    text-shadow: -1px 1px 2px rgba(0, 0, 0, 1);
-     box-shadow: -2px 2px 4px rgba(0, 0, 0, 0.5);
-     text: whitesmoke;
+  text-shadow: -1px 1px 2px rgba(0, 0, 0, 1);
+  box-shadow: -2px 2px 4px rgba(0, 0, 0, 0.5);
+  color: whitesmoke;
+ 
 }
 
 .visually-hidden {
@@ -13,4 +14,33 @@
   overflow: hidden !important;
   clip: rect(0 0 0 0) !important;
   border: 0 !important;
+}
+.brainBuddysTitleBox {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+ 
+  animation: scaleIn 2s ease-in-out forwards;
+} 
+
+ .brainBuddysTitleBox {
+  animation: scaleIn 2s ease-in-out forwards;
+ }
+@keyframes scaleIn {
+  0% {
+    transform: scale(0);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+
+
+
+.BrainBuddysH1 {
+  text-shadow: -1px 1px 2px rgba(0, 0, 0, 1);
+  box-shadow: -2px 2px 4px rgba(0, 0, 0, 0.5);
+  color: whitesmoke;
 }
