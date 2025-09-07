@@ -2,7 +2,7 @@ import "./AMainFrontPage.jsx"
 import "./AMainFrontPage.css";
 // eslint-disable-next-line no-unused-vars
 import React from "react";
-import BlankBrain from "/BrainBuddy580x580.webp"; // Adjust the path as needed
+import BlankBrain from "/BrainBuddy100px.webp"; // Adjust the path as needed
 import  LazyDisplayComponent from "./FrontPageComponents/DisplayComponentFolder/LazyDisplayComponent.jsx"
 
 const BrainBuddys = () => {
