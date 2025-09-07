@@ -26,8 +26,6 @@
   margin: 0 auto;
   margin-top: 3rem;
   z-index: 0;
-  width: 400px;
-  height: 400px;
 }
 
 canvas {
@@ -48,11 +46,20 @@ canvas {
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  height: 100vh;
+  border: 2px solid #6dc0e4;
+  height: 75vh;
+  width: 100%;
   background: radial-gradient(circle at center, #0f2027, #203a43, #2c5364);
   color: #fff;
   font-family: 'Orbitron', sans-serif;
   overflow: hidden;
+  margin:  auto;
+}
+@media (max-width: 768px) {
+  .fallback-container {
+    width: 80%;
+    height: 50vh;
+  }
 }
 
 .glow-ring {

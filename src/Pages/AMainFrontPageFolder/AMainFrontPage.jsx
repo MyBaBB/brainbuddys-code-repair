@@ -8,15 +8,24 @@ import  LazyDisplayComponent from "./FrontPageComponents/DisplayComponentFolder/
 const BrainBuddys = () => {
   return (
     <div className="relative flex items-center justify-center h-screen w-full   "> 
-     <a href="https://mybabb.com/TechSupportPage" target="_blank" rel="noopener noreferrer">
+     <a href="https://mybabb.com/TechSupportPage"
+      className="absolute top-4 left-4 z-10 
+                 w-[100px] h-[100px]
+                 hover:opacity-85">
+    <img src={BlankBrain} alt="Brain Buddy Image Icon" />
+    </a>
+
+
+     <a href="https://mybabb.com/TechSupportPage" target="_blank" rel="noopener noreferrer"
+      className="hover:opacity-85">
     <section className="relative flex-col items-center justify-center h-fit w-fit m-auto   z-1
                     ">
       <article className="relative  ">
-        <header className="brainBuddysTitleBox absolute w-full h-fit p-2 bottom-[.9rem] z-10">
-         
+        <header className="brainBuddysTitleBox absolute w-full h-fit p-2 bottom-[-3rem] sm:bottom-[.9rem] z-10">
+
             <h1
-              className="BrainBuddysH1  relative flex m-auto w-fit text-[1rem] sm:text-4xl z-10 
-                         text-center rounded-xl p-2  bg-[#7ee3c7]
+              className="BrainBuddysH1  relative flex m-auto  w-fit text-[.6rem] sm:text-4xl z-10 
+                         text-center rounded-xl p-2  bg-[#7ee3c7] bg-opacity-70 
                           font-PTSerif-Bold "
             >
             <span className="">Brain &nbsp;</span>
