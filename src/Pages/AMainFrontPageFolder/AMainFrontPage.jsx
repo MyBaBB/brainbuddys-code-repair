@@ -20,7 +20,7 @@ const BrainBuddys = () => {
       className="hover:opacity-85">
     <section className="relative flex-col items-center justify-center h-fit w-fit m-auto   z-1
                     ">
-      <article className="relative  ">
+      <article className=" ">
         <header className="brainBuddysTitleBox absolute w-full h-fit p-2 bottom-[-3rem] sm:bottom-[.9rem] z-10">
 
             <h1
