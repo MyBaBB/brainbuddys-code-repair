@@ -26,7 +26,7 @@ function Scene() {
   return (
     // find CanvasWrapper here border-2 border-varDARKBLUEFEATHER
     <>
-      <div className="displayCanvasWrapper flex  border-2 border-red-500 ">
+      <div className="displayCanvasWrapper flex  border-2 border-red-500  ">
         <div
           className="canvasBgColor  relative   
          h-[300px] w-[300px] flex-row justify-center sm:h-[380px] sm:w-[380px]

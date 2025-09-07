@@ -13,7 +13,7 @@ const BrainBuddys = () => {
                     ">
       <article className="relative  ">
         <header className="brainBuddysTitleBox absolute w-full h-fit p-2 bottom-[3.9rem] z-10">
-          <LazyDisplayComponent />
+         
             <h1
               className="BrainBuddysH1  relative flex m-auto w-fit text-[1rem] sm:text-4xl z-10 
                          text-center rounded-xl p-2  bg-blue-500
@@ -24,8 +24,8 @@ const BrainBuddys = () => {
           </h1>
           
         </header>
-        <img src={BlankBrain} alt="Blank Brain Cover Image" className="relative m-auto" />
-
+        {/* <img src={BlankBrain} alt="Blank Brain Cover Image" className="relative m-auto" /> */}
+ <LazyDisplayComponent />
         {/* Hidden SEO content */}
         <p className="visually-hidden">
           Brain Buddy`s is your trusted technical support hub, providing expert assistance in web development, troubleshooting, and optimization. Whether you`re stuck on coding challenges, software configuration, or website deployment, we`re here to help. Easily schedule a consultation through our integrated calendar or reach out via email for personalized guidance. From frontend design to backend systems, SEO strategies to accessibility improvements, we ensure you have the resources to overcome obstacles and enhance your digital projects. Get reliable support when you need it — because building the web should be stress-free and efficient
