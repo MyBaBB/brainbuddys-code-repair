@@ -26,12 +26,8 @@ function Scene() {
   return (
     // find CanvasWrapper here border-2 border-varDARKBLUEFEATHER
     <>
-      <div className="displayCanvasWrapper flex  border-2 border-red-500  ">
-        <div
-          className="canvasBgColor  relative   
-         h-[300px] w-[300px] flex-row justify-center sm:h-[380px] sm:w-[380px]
-         border-2 border-red-500  "
-        >
+      <div className="displayCanvasWrapper flex border-2 border-red-500">
+        <div className="canvasBgColor relative h-[300px] w-[300px] flex-row justify-center border-2 border-red-500 sm:h-[380px] sm:w-[380px]">
           <Canvas camera={{ position: [5.1, 3, 5], fov: 50 }}>
             <OrbitControls enabled={false} enableZoom={false} />
             <Suspense fallback={null}>

@@ -1,11 +1,9 @@
 import FrontPage from "./AMainFrontPageFolder/AMainFrontPage";
 
-
-
 function App() {
   return (
     <div>
-      < FrontPage />
+      <FrontPage />
     </div>
   );
 }
