@@ -8,7 +8,7 @@
 
 }
 .brainBuddysBackground {
-  background-image: url("./BrainsInLove.webp"); /* You can customize the size or use a specific image ID */
+  background-image: url("/public/BrainsInLove.webp"); /* You can customize the size or use a specific image ID */
   background-size: cover;
   background-position: center;
   position: relative;
