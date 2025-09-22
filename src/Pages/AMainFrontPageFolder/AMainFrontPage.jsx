@@ -20,7 +20,7 @@ const BrainBuddys = () => {
 
      <a href="https://mybabb.com/TechSupportPage" target="_blank" rel="noopener noreferrer"
       className="hover:opacity-85">
-    <section className="relative flex-col items-center justify-center h-fit w-fit m-auto   z-1
+    <section className="relative flex-col items-center justify-center h-fit w-fit m-auto mt-[11rem]  z-1
                     ">
       <article className=" ">
         <header className="brainBuddysTitleBox relative flex flex-col items-center w-full h-fit p-2 bottom-[-3rem] sm:bottom-[.9rem] z-10">
