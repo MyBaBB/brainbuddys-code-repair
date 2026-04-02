@@ -11,8 +11,6 @@ const App = () => {
         <Routes>
           <Route path="/" element={<Zenith />} />
           <Route path="/AMainFrontPage" element={<AMainFrontPage />} />
-       
-          
         </Routes>
       </Router>
     </main>
