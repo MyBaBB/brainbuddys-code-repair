@@ -10,7 +10,7 @@ const App = () => {
       <Router>
         <Routes>
           <Route path="/" element={<Zenith />} />
-          <Route path="/AMainFrontPage" element={<AMainFrontPage />} />
+          <Route path="/amainfrontpage" element={<AMainFrontPage />} />
         </Routes>
       </Router>
     </main>
