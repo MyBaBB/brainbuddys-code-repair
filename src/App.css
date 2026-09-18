@@ -1,7 +1,18 @@
-#root {
+html,
+body {
+  margin: 0;
+  padding: 0;
+  width: 100%;
   background-color: #1f2b3b;
-  overflow: hidden;
+  overflow-x: hidden;
+  overflow-y: scroll !important; /* Force scrollbar enabled */
 }
+
+#root {
+  width: 100%;
+  background-color: #1f2b3b;
+}
+
 * {
   box-sizing: border-box;
 }

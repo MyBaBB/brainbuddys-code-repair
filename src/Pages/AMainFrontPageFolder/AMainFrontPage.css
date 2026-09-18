@@ -5,27 +5,6 @@
   border: 2px solid rgba(255, 255, 255, 1);
   width: fit-content;
   height: fit-content !important;
-
-}
-.brainBuddysBackground {
-  background-image: url("/BrainsInLove.webp"); /* You can customize the size or use a specific image ID */
-  background-size: cover;
-  background-position: center;
-  position: relative;
-  height: 100vh;
-  width: 100%;
-  overflow: hidden;
-}
-
-.brainBuddysOverlay {
-  position: absolute;
-  top: 0;
-  left: 0;
-  height: 100%;
-  width: 100%;
-  background-color: black;
-  opacity: 0.6;
-  z-index: 0;
 }
 
 .visually-hidden {
@@ -38,26 +17,84 @@
   clip: rect(0 0 0 0) !important;
   border: 0 !important;
 }
+
+/* FIXED ANIMATION — no more scale(0) */
 .brainBuddysTitleBox {
   position: relative;
   display: flex;
   justify-content: center;
   align-items: center;
- 
-  animation: scaleIn 2s ease-in-out forwards;
-} 
+  animation: scaleIn 1.2s ease-out forwards;
+}
 
- .brainBuddysTitleBox {
-  animation: scaleIn 2s ease-in-out forwards;
- }
 @keyframes scaleIn {
   0% {
-    transform: scale(0);
+    transform: scale(0.85);
+    opacity: 0;
   }
   100% {
     transform: scale(1);
+    opacity: 1;
   }
 }
+/* Card Container */
+.imageCardContainer {
+  position: relative;
+  width: 100%;
+  max-width: 600px;
+  border-radius: 0.75rem;
+  overflow: hidden;
+  box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.4);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
 
+.imageCardContainer:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 15px 30px -5px rgba(0, 0, 0, 0.6);
+}
 
+/* Base Image Styling & Zoom Effect */
+.representativeImage {
+  width: 100%;
+  height: auto;
+  aspect-ratio: 1 / 1;
+  object-fit: cover;
+  display: block;
+  border-radius: 0.75rem;
+  transition: transform 0.5s ease;
+}
 
+.imageCardContainer:hover .representativeImage {
+  transform: scale(1.03);
+}
+
+/* General Status Badge */
+.statusBadge {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  z-index: 20;
+  padding: 0.35rem 0.85rem;
+  font-size: 0.85rem;
+  font-weight: 700;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  border-radius: 9999px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.5);
+  backdrop-filter: blur(4px);
+}
+
+/* Green "Available" Badge */
+.badgeAvailable {
+  background-color: rgba(22, 101, 52, 0.9); /* Emerald green */
+  color: #dcfce7;
+  border: 1px solid rgba(134, 239, 172, 0.6);
+}
+
+/* Red "Unavailable" Badge */
+.badgeUnavailable {
+  background-color: rgba(153, 27, 27, 0.9); /* Ruby red */
+  color: #fee2e2;
+  border: 1px solid rgba(252, 165, 165, 0.6);
+}
