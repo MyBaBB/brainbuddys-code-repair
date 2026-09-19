@@ -6,12 +6,12 @@ import Zenith from "./Pages/Zenith";
 
 const App = () => {
   return (
-    <main className="  text-white">
+    <main className="text-white">
       <Router>
         <Routes>
           <Route path="/" element={<Zenith />} />
           <Route path="/amainfrontpage" element={<AMainFrontPage />} />
-           <Route path="/*" element={<Navigate to="/" replace />} />
+          <Route path="/*" element={<Navigate to="/" replace />} />
         </Routes>
       </Router>
     </main>

@@ -1,126 +1,118 @@
- 
 import "./AMainFrontPage.css";
 import BlankBrain from "/BrainBuddy100px.png"; // Adjust path as needed
 import Me from "../../Images/Me.webp";
-import Alice from "../../Images/Alice.webp"; 
+import Alice from "../../Images/Alice.webp";
 import Bruce from "../../Images/Bruce.webp";
 import Amber from "../../Images/Amber.webp";
 import ContactMe from "../../Components/ContactMeFolder/ContactMe.jsx";
 const BrainBuddys = () => {
   return (
-    <div className="grid grid-cols-1 min-[900px]:grid-cols-[1fr_minmax(auto,900px)_1fr] w-full">
-      
+    <div className="grid w-full grid-cols-1 min-[900px]:grid-cols-[1fr_minmax(auto,900px)_1fr]">
       {/* LEFT SIDEBAR */}
-      <aside className="hidden min-[900px]:block bg-slate-50/10 border-r border-gray-200/20 p-4">
-      
-      </aside>
+      <aside className="hidden border-r border-gray-200/20 bg-slate-50/10 p-4 min-[900px]:block"></aside>
 
       {/* MAIN CONTENT */}
-      <main className="relative flex flex-col items-center w-full pb-20 px-4">
-          
+      <main className="relative flex w-full flex-col items-center px-4 pb-20">
         {/* Logo */}
-        <a 
+        <a
           href="https://mybabb.com/TechSupportPage"
-          className="absolute top-4 left-4 z-20 w-[100px] h-[100px] hover:opacity-85"
+          className="absolute left-4 top-4 z-20 h-[100px] w-[100px] hover:opacity-85"
         >
-          <img src={BlankBrain} alt="Brain Buddy Image Icon" className="brainBuddyIcon w-full h-full object-contain  " />
+          <img
+            src={BlankBrain}
+            alt="Brain Buddy Image Icon"
+            className="brainBuddyIcon h-full w-full object-contain"
+          />
         </a>
 
         {/* Hero Title */}
-        <section className="relative flex flex-col items-center justify-center w-full max-w-xl mx-auto mt-24 sm:mt-10 z-10">
-          <article className="w-full flex flex-col items-center">
-            <header className="brainBuddysTitleBox relative flex flex-col items-center w-full h-fit p-2 z-10">
-              <h1 className="BrainBuddysH1 text-center text-xl sm:text-4xl z-10 rounded-xl p-2 bg-[#33626e] px-4 bg-opacity-90 font-PTSerif-Bold">
-                <span className="whitespace-nowrap text-amber-100">Brain&nbsp;Buddy&apos;s</span>
+        <section className="relative z-10 mx-auto mt-24 flex w-full max-w-xl flex-col items-center justify-center sm:mt-10">
+          <article className="flex w-full flex-col items-center">
+            <header className="brainBuddysTitleBox relative z-10 flex h-fit w-full flex-col items-center p-2">
+              <h1 className="BrainBuddysH1 z-10 rounded-xl bg-[#33626e] bg-opacity-90 p-2 px-4 text-center font-PTSerif-Bold text-xl sm:text-4xl">
+                <span className="whitespace-nowrap text-amber-100">
+                  Brain&nbsp;Buddy&apos;s
+                </span>
               </h1>
               <br />
-              <span className="relative text-amber-100 text-center text-xs sm:text-2xl mt-4">
+              <span className="relative mt-4 text-center text-xs text-amber-100 sm:text-2xl">
                 Brett&apos;s Web Development and Technical Support
               </span>
             </header>
-            
+
             <p className="visually-hidden">
-              Brain Buddy`s is your trusted technical support hub, providing expert assistance in web development, troubleshooting, and optimization.
+              Brain Buddy`s is your trusted technical support hub, providing
+              expert assistance in web development, troubleshooting, and
+              optimization.
             </p>
           </article>
         </section>
 
         {/* 4 REPRESENTATIVE IMAGES WITH BADGES */}
-        <section className="w-full max-w-[600px] min-[900px]:max-w-full mt-12 z-10">
-          <div className="grid grid-cols-1 min-[900px]:grid-cols-2 gap-8 justify-items-center">
-            
+        <section className="z-10 mt-12 w-full max-w-[600px] min-[900px]:max-w-full">
+          <div className="grid grid-cols-1 justify-items-center gap-8 min-[900px]:grid-cols-2">
             {/* Representative 1 - Available */}
             <a href="https://contact.mybabb.com">
-            <div className="imageCardContainer">
+              <div className="imageCardContainer">
                 <span className="statusBadge badgeAvailable">
-                 <span className="green-dot"></span> 
-                 Available
+                  <span className="green-dot"></span>
+                  Available
                 </span>
-              <img 
-                src={Me} 
-                alt="Representative 1" 
-                className="representativeImage" 
-              />
-            </div>
-       </a>
+                <img
+                  src={Me}
+                  alt="Representative 1"
+                  className="representativeImage"
+                />
+              </div>
+            </a>
 
-       
             {/* Representative 2 - Unavailable */}
             <div className="imageCardContainer">
-                  <div className="statusBadge badgeUnavailable">
-                    <span className="red-dot ">
-                      
-                    </span> 
-                      &nbsp;Off-line
-                  </div>
-              <img 
-                src={Amber} 
-                alt="Representative 2" 
-                className="representativeImage" 
+              <div className="statusBadge badgeUnavailable">
+                <span className="red-dot"></span>
+                &nbsp;Off-line
+              </div>
+              <img
+                src={Amber}
+                alt="Representative 2"
+                className="representativeImage"
               />
             </div>
 
             {/* Representative 3 - Unavailable */}
             <div className="imageCardContainer">
               <div className="statusBadge badgeUnavailable">
-                    <span className="red-dot ">
-                      
-                    </span> 
-                      &nbsp;Off-line
-                  </div>
-              <img 
-                src={Alice} 
-                alt="Representative 3" 
-                className="representativeImage" 
+                <span className="red-dot"></span>
+                &nbsp;Off-line
+              </div>
+              <img
+                src={Alice}
+                alt="Representative 3"
+                className="representativeImage"
               />
             </div>
 
             {/* Representative 4 - Unavailable */}
             <div className="imageCardContainer">
-         <div className="statusBadge badgeUnavailable">
-                    <span className="red-dot ">
-                      
-                    </span> 
-                      &nbsp;Off-line
-                  </div>
-              <img 
-                src={Bruce} 
-                alt="Representative 4" 
-                className="representativeImage" 
+              <div className="statusBadge badgeUnavailable">
+                <span className="red-dot"></span>
+                &nbsp;Off-line
+              </div>
+              <img
+                src={Bruce}
+                alt="Representative 4"
+                className="representativeImage"
               />
             </div>
-
           </div>
-          
         </section>
-                <div className="w-full flex justify-center mt-12">< ContactMe /></div>
+        <div className="mt-12 flex w-full justify-center">
+          <ContactMe />
+        </div>
       </main>
 
       {/* RIGHT SIDEBAR */}
-      <aside className="hidden min-[900px]:block bg-slate-50/10 border-l border-gray-200/20 p-4">
-       
-      </aside>
-
+      <aside className="hidden border-l border-gray-200/20 bg-slate-50/10 p-4 min-[900px]:block"></aside>
     </div>
   );
 };

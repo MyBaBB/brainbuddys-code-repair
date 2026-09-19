@@ -45,7 +45,9 @@
   border-radius: 0.75rem;
   overflow: hidden;
   box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.4);
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  transition:
+    transform 0.3s ease,
+    box-shadow 0.3s ease;
   border: 1px solid rgba(255, 255, 255, 0.1);
 }
 
@@ -85,7 +87,7 @@
   backdrop-filter: blur(4px);
 }
 
- /* Base styles shared by both badges */
+/* Base styles shared by both badges */
 .badgeAvailable,
 .badgeUnavailable {
   display: inline-flex;
@@ -109,7 +111,8 @@
   height: 1rem;
   border-radius: 50%;
   flex-shrink: 0;
-  background: radial-gradient(circle,
+  background: radial-gradient(
+    circle,
     #86efac 0%,
     #22c55e 40%,
     #14532d 70%,
@@ -130,7 +133,8 @@
   height: 1rem;
   border-radius: 50%;
   flex-shrink: 0;
-  background: radial-gradient(circle,
+  background: radial-gradient(
+    circle,
     #ff4d4d 0%,
     #d60000 40%,
     #800000 70%,
@@ -147,4 +151,3 @@
     display: block;
   }
 }
-
