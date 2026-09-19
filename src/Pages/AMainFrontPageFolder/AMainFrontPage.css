@@ -85,16 +85,66 @@
   backdrop-filter: blur(4px);
 }
 
-/* Green "Available" Badge */
-.badgeAvailable {
-  background-color: rgba(22, 101, 52, 0.9); /* Emerald green */
-  color: #dcfce7;
-  border: 1px solid rgba(134, 239, 172, 0.6);
+ /* Base styles shared by both badges */
+.badgeAvailable,
+.badgeUnavailable {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem; /* Automatically gaps the dot and text */
+  padding: 0.5rem 0.75rem;
+  border-radius: 14px;
+  text-decoration: underline;
 }
 
-/* Red "Unavailable" Badge */
-.badgeUnavailable {
-  background-color: rgba(153, 27, 27, 0.9); /* Ruby red */
-  color: #fee2e2;
-  border: 1px solid rgba(252, 165, 165, 0.6);
+/* --- AVAILABLE BADGE --- */
+.badgeAvailable {
+  background-color: #2e382e;
+  color: #f0fff4;
+  border: 1px solid rgba(134, 239, 172, 0.4);
+  text-decoration-color: #22c55e;
 }
+
+.green-dot {
+  width: 1rem;
+  height: 1rem;
+  border-radius: 50%;
+  flex-shrink: 0;
+  background: radial-gradient(circle,
+    #86efac 0%,
+    #22c55e 40%,
+    #14532d 70%,
+    transparent 100%
+  );
+}
+
+/* --- UNAVAILABLE BADGE --- */
+.badgeUnavailable {
+  background-color: gray;
+  color: ivory;
+  border: 1px solid rgba(252, 165, 165, 0.6);
+  text-decoration-color: red;
+}
+
+.red-dot {
+  width: 1rem;
+  height: 1rem;
+  border-radius: 50%;
+  flex-shrink: 0;
+  background: radial-gradient(circle,
+    #ff4d4d 0%,
+    #d60000 40%,
+    #800000 70%,
+    transparent 100%
+  );
+}
+.brainBuddyIcon {
+  display: none;
+}
+
+/* Media Queries for responsiveness */
+@media (min-width: 650px) {
+  .brainBuddyIcon {
+    display: block;
+  }
+}
+

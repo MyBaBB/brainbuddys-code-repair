@@ -5,6 +5,7 @@ import Me from "../../Images/Me.webp";
 import Alice from "../../Images/Alice.webp"; 
 import Bruce from "../../Images/Bruce.webp";
 import Amber from "../../Images/Amber.webp";
+import ContactMe from "../../Components/ContactMeFolder/ContactMe.jsx";
 const BrainBuddys = () => {
   return (
     <div className="grid grid-cols-1 min-[900px]:grid-cols-[1fr_minmax(auto,900px)_1fr] w-full">
@@ -15,25 +16,25 @@ const BrainBuddys = () => {
       </aside>
 
       {/* MAIN CONTENT */}
-      <main className="relative flex flex-col items-center w-full pb-32 px-4">
-
+      <main className="relative flex flex-col items-center w-full pb-20 px-4">
+          
         {/* Logo */}
         <a 
           href="https://mybabb.com/TechSupportPage"
           className="absolute top-4 left-4 z-20 w-[100px] h-[100px] hover:opacity-85"
         >
-          <img src={BlankBrain} alt="Brain Buddy Image Icon" className="w-full h-full object-contain" />
+          <img src={BlankBrain} alt="Brain Buddy Image Icon" className="brainBuddyIcon w-full h-full object-contain  " />
         </a>
 
         {/* Hero Title */}
-        <section className="relative flex flex-col items-center justify-center w-full max-w-xl mx-auto mt-24 sm:mt-32 z-10">
+        <section className="relative flex flex-col items-center justify-center w-full max-w-xl mx-auto mt-24 sm:mt-10 z-10">
           <article className="w-full flex flex-col items-center">
             <header className="brainBuddysTitleBox relative flex flex-col items-center w-full h-fit p-2 z-10">
               <h1 className="BrainBuddysH1 text-center text-xl sm:text-4xl z-10 rounded-xl p-2 bg-[#33626e] px-4 bg-opacity-90 font-PTSerif-Bold">
                 <span className="whitespace-nowrap text-amber-100">Brain&nbsp;Buddy&apos;s</span>
               </h1>
               <br />
-              <span className="relative text-amber-100 text-center text-xs sm:text-2xl mt-[-1rem] sm:mt-0">
+              <span className="relative text-amber-100 text-center text-xs sm:text-2xl mt-4">
                 Brett&apos;s Web Development and Technical Support
               </span>
             </header>
@@ -51,7 +52,10 @@ const BrainBuddys = () => {
             {/* Representative 1 - Available */}
             <a href="https://contact.mybabb.com">
             <div className="imageCardContainer">
-              <span className="statusBadge badgeAvailable">🟢 Available</span>
+                <span className="statusBadge badgeAvailable">
+                 <span className="green-dot"></span> 
+                 Available
+                </span>
               <img 
                 src={Me} 
                 alt="Representative 1" 
@@ -63,7 +67,12 @@ const BrainBuddys = () => {
        
             {/* Representative 2 - Unavailable */}
             <div className="imageCardContainer">
-              <span className="statusBadge badgeUnavailable">⭕-Offline</span>
+                  <div className="statusBadge badgeUnavailable">
+                    <span className="red-dot ">
+                      
+                    </span> 
+                      &nbsp;Off-line
+                  </div>
               <img 
                 src={Amber} 
                 alt="Representative 2" 
@@ -73,7 +82,12 @@ const BrainBuddys = () => {
 
             {/* Representative 3 - Unavailable */}
             <div className="imageCardContainer">
-              <span className="statusBadge badgeUnavailable">⭕-Offline</span>
+              <div className="statusBadge badgeUnavailable">
+                    <span className="red-dot ">
+                      
+                    </span> 
+                      &nbsp;Off-line
+                  </div>
               <img 
                 src={Alice} 
                 alt="Representative 3" 
@@ -83,7 +97,12 @@ const BrainBuddys = () => {
 
             {/* Representative 4 - Unavailable */}
             <div className="imageCardContainer">
-              <span className="statusBadge badgeUnavailable">⭕-Offline</span>
+         <div className="statusBadge badgeUnavailable">
+                    <span className="red-dot ">
+                      
+                    </span> 
+                      &nbsp;Off-line
+                  </div>
               <img 
                 src={Bruce} 
                 alt="Representative 4" 
@@ -92,8 +111,9 @@ const BrainBuddys = () => {
             </div>
 
           </div>
+          
         </section>
-
+                <div className="w-full flex justify-center mt-12">< ContactMe /></div>
       </main>
 
       {/* RIGHT SIDEBAR */}
