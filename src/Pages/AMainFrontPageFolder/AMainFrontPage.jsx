@@ -15,7 +15,7 @@ const BrainBuddys = () => {
       <main className="relative flex w-full flex-col items-center px-4 pb-20">
         {/* Logo */}
         <a
-          href="https://mybabb.com/TechSupportPage"
+          href="https://mybabb.com/techsupportpage"
           className="absolute left-4 top-4 z-20 h-[100px] w-[100px] hover:opacity-85"
         >
           <img
@@ -52,7 +52,7 @@ const BrainBuddys = () => {
         <section className="z-10 mt-12 w-full max-w-[600px] min-[900px]:max-w-full">
           <div className="grid grid-cols-1 justify-items-center gap-8 min-[900px]:grid-cols-2">
             {/* Representative 1 - Available */}
-            <a href="https://contact.mybabb.com">
+            <a href="https://mybabb.com/techsupportpage">
               <div className="imageCardContainer">
                 <span className="statusBadge badgeAvailable">
                   <span className="green-dot"></span>
