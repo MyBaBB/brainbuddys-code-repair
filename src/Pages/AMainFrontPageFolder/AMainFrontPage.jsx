@@ -1,7 +1,7 @@
 import "./AMainFrontPage.css";
 import BlankBrain from "/BrainBuddy100px.png"; // Adjust path as needed
 import Me from "../../Images/Me.webp";
-import Alice from "../../Images/Alice.webp";
+import Blair from "../../Images/Blair.webp";
 import Bruce from "../../Images/Bruce.webp";
 import Amber from "../../Images/Amber.webp";
 import ContactMe from "../../Components/ContactMeFolder/ContactMe.jsx";
@@ -93,7 +93,7 @@ const BrainBuddys = () => {
                 &nbsp;Active
               </div>
               <img
-                src={Alice}
+                src={Blair}
                 alt="Representative 3"
                 className="representativeImage"
               />

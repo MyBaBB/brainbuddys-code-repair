@@ -30,7 +30,7 @@ export const teamRoles = [
   },
   {
     id: 3,
-    title: "Alice",
+    title: "Blair",
     title2: "Digital Media Artist",
     bullets: [
       "Designs custom graphics, icons, and visual assets",
