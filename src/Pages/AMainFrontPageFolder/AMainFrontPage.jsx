@@ -106,7 +106,7 @@ const BrainBuddys = () => {
             <div className="imageCardContainer">
               <div className="statusBadge badgeUnavailable">
                 <span className="red-dot"></span>
-                &nbsp;Off-line
+                &nbsp;...busy
               </div>
               <img
                 src={Bruce}
