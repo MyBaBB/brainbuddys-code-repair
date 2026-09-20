@@ -67,56 +67,58 @@ const BrainBuddys = () => {
                 />
                 <RoleCardOverlay roleIndex={0} />
               </div>
-            </a>
+          </a>
 
             {/* Representative 2 - Unavailable */}
-            <a href="https://mybabb.com/techsupportpage">
-              <div className="imageCardContainer">
-                <div className="statusBadge badgeUnavailable">
-                  <span className="amber-dot"></span>
-                  &nbsp;Active
-                </div>
-                <img
-                  src={Amber}
-                  alt="Representative 2"
-                  className="representativeImage"
-                />
-                <RoleCardOverlay roleIndex={1} />
+          <a href="https://mybabb.com/techsupportpage">
+            <div className="imageCardContainer">
+              <div className="statusBadge badgeUnavailable">
+                <span className="amber-dot"></span>
+                &nbsp;Active
               </div>
-            </a>
+              <img
+                src={Amber}
+                alt="Representative 2"
+                className="representativeImage"
+              />
+              <RoleCardOverlay roleIndex={1} />
+            </div>
+       </a>
 
             {/* Representative 3 - Unavailable */}
-            <a href="https://mybabb.com/techsupportpage">
-              <div className="imageCardContainer">
-                <div className="statusBadge badgeUnavailable">
-                  <span className="amber-dot"></span>
-                  &nbsp;Active
-                </div>
-                <img
-                  src={Alice}
-                  alt="Representative 3"
-                  className="representativeImage"
-                />
-                <RoleCardOverlay roleIndex={2} />
+       <a href="https://mybabb.com/techsupportpage">
+            <div className="imageCardContainer">
+              <div className="statusBadge badgeUnavailable">
+                <span className="amber-dot"></span>
+                &nbsp;Active
               </div>
-            </a>
+              <img
+                src={Alice}
+                alt="Representative 3"
+                className="representativeImage"
+              />
+              <RoleCardOverlay roleIndex={2} />
+            </div>
+       </a>
 
             {/* Representative 4 - Unavailable */}
-            <a href="https://mybabb.com/techsupportpage">
-              <div className="imageCardContainer">
-                <div className="statusBadge badgeUnavailable">
-                  <span className="red-dot"></span>
-                  &nbsp;Off-line
-                </div>
-                <img
-                  src={Bruce}
-                  alt="Representative 4"
-                  className="representativeImage"
-                />
-                <RoleCardOverlay roleIndex={3} />
+        <a href="https://mybabb.com/techsupportpage">
+            <div className="imageCardContainer">
+              <div className="statusBadge badgeUnavailable">
+                <span className="red-dot"></span>
+                &nbsp;Off-line
               </div>
-            </a>
-          </div>
+              <img
+                src={Bruce}
+                alt="Representative 4"
+                className="representativeImage"
+              />
+              <RoleCardOverlay roleIndex={3} />
+            </div>
+          </a>
+
+      </div>
+          
         </section>
         <div className="mt-12 flex w-full justify-center">
           <ContactMe />
