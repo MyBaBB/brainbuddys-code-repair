@@ -52,7 +52,7 @@
 }
 
 .imageCardContainer:hover {
-  transform: translateY(-4px);
+
   box-shadow: 0 15px 30px -5px rgba(0, 0, 0, 0.6);
 }
 
@@ -67,9 +67,7 @@
   transition: transform 0.5s ease;
 }
 
-.imageCardContainer:hover .representativeImage {
-  transform: scale(1.03);
-}
+
 
 /* General Status Badge */
 .statusBadge {

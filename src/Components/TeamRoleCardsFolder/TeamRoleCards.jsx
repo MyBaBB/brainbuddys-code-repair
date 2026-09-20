@@ -4,7 +4,8 @@ import "./TeamRoleCards.css";
 export const teamRoles = [
   {
     id: 1,
-    title: "Chief Web Architect",
+    title: "Brett",
+    title2: "Chief Web Architect",
     bullets: [
       "Oversees full system architecture and project direction",
       "Designs scalable structures for React, Vite, Tailwind, and backend integrations",
@@ -16,7 +17,8 @@ export const teamRoles = [
   },
   {
     id: 2,
-    title: "Interface Designer",
+    title: "Amber",
+    title2: "Interface Designer",
     bullets: [
       "Creates clean, intuitive UI layouts and user flows",
       "Designs wireframes, mockups, and interactive prototypes",
@@ -28,7 +30,8 @@ export const teamRoles = [
   },
   {
     id: 3,
-    title: "Digital Media Artist",
+    title: "Alice",
+    title2: "Digital Media Artist",
     bullets: [
       "Designs custom graphics, icons, and visual assets",
       "Produces video content, motion graphics, and animations",
@@ -40,7 +43,8 @@ export const teamRoles = [
   },
   {
     id: 4,
-    title: "SEO & Domain Strategist",
+    title: "Bruce",
+    title2: "SEO & Domain Strategist",
     bullets: [
       "Manages domains, DNS, SSL, and hosting‑related SEO factors",
       "Optimizes site structure for search visibility and ranking",
@@ -60,9 +64,12 @@ export const RoleCardOverlay = ({ roleIndex }) => {
 
   return (
     <div className={`roleCardOverlayContainer ${isOpen ? "is-open" : ""}`}>
-      {/* Bottom-left Title Bar */}
+      {/* Title Bar - Shows title when closed, title2 when open */}
       <div className="roleTitleBar">
-        <h3 className="roleTitle">{role.title}</h3>
+        <h3 className="roleTitle">
+          <span className="titleClosed">{role.title}</span>
+          <span className="titleOpen">{role.title2 || role.title}</span>
+        </h3>
         <button
           onClick={(e) => {
             e.preventDefault();
@@ -86,7 +93,7 @@ export const RoleCardOverlay = ({ roleIndex }) => {
         }}
       >
         <div className="accordionHeader">
-          <span className="accordionTitle">{role.title}</span>
+          <span className="accordionTitle">{role.title2 || role.title}</span>
           <button
             onClick={(e) => {
               e.preventDefault();

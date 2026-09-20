@@ -1,172 +1,44 @@
-/* Container for title + accordion positioned over image */
+/* Card Overlay Base Container */
 .roleCardOverlayContainer {
   position: absolute;
   inset: 0;
-  pointer-events: none; /* Let image hover events pass through */
+  pointer-events: none; /* Mouse clicks pass through to outer image / <a> tag */
   display: flex;
   flex-direction: column;
   justify-content: flex-end;
+  align-items: center; /* Centering the title bar horizontally */
   padding: 1rem;
   z-index: 15;
 }
 
-/* Ensure interactive controls inside receive clicks */
+/* Ensure interactive overlay elements receive mouse clicks */
 .roleCardOverlayContainer > * {
   pointer-events: auto;
 }
 
-/* Bottom-left Title Bar */
-.roleTitleBar {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 0.5rem;
-  background: rgba(15, 23, 42, 0.75);
-  backdrop-filter: blur(6px);
-  padding: 0.5rem 0.85rem;
-  border-radius: 0.5rem;
-  border: 1px solid rgba(255, 255, 255, 0.15);
-}
-
-/* Title: Plain white letters, semi-bold */
-.roleTitle {
-  color: #ffffff;
-  font-weight: 600; /* semi-bold */
-  font-size: 1rem;
-  margin: 0;
-  text-shadow: 0 1px 3px rgba(0, 0, 0, 0.8);
-  letter-spacing: 0.02em;
-}
-
-/* Toggle Details Button */
-.roleToggleButton {
-  background: rgba(255, 255, 255, 0.15);
-  color: #ffffff;
-  border: 1px solid rgba(255, 255, 255, 0.3);
-  padding: 0.25rem 0.6rem;
-  border-radius: 0.375rem;
-  font-size: 0.75rem;
-  font-weight: 600;
-  cursor: pointer;
-  transition:
-    background 0.2s ease,
-    transform 0.1s ease;
-}
-
-.roleToggleButton:hover {
-  background: rgba(255, 255, 255, 0.3);
-  transform: translateY(-1px);
-}
-
-/* Accordion Box with Landing Bounce Animation */
-.roleAccordionBounce {
+/* Dark Slate Overlay over the Image */
+.roleCardOverlayContainer::before {
+  content: "";
   position: absolute;
-  bottom: 1rem;
-  left: 1rem;
-  right: 1rem;
-  max-height: 85%;
-  overflow-y: auto;
-  background: rgba(15, 23, 42, 0.95);
-  border: 1px solid rgba(255, 255, 255, 0.2);
+  inset: 0;
+  background-color: rgba(15, 23, 42, 0.5); /* Slate color at 0.5 opacity */
   border-radius: 0.75rem;
-  padding: 1rem;
-  box-shadow:
-    0 20px 25px -5px rgba(0, 0, 0, 0.7),
-    0 8px 10px -6px rgba(0, 0, 0, 0.5);
-  backdrop-filter: blur(12px);
-  color: #f8fafc;
-  z-index: 30;
-  animation: bounceLanding 0.5s cubic-bezier(0.34, 1.56, 0.64, 1) forwards;
-}
-
-/* Keyframes for elastic landing bounce */
-@keyframes bounceLanding {
-  0% {
-    opacity: 0;
-    transform: translateY(40px) scale(0.92);
-  }
-  60% {
-    opacity: 1;
-    transform: translateY(-8px) scale(1.02);
-  }
-  80% {
-    transform: translateY(3px) scale(0.99);
-  }
-  100% {
-    opacity: 1;
-    transform: translateY(0) scale(1);
-  }
-}
-
-/* Accordion Inner Header */
-.accordionHeader {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  border-bottom: 1px solid rgba(255, 255, 255, 0.15);
-  padding-bottom: 0.5rem;
-  margin-bottom: 0.75rem;
-}
-
-.accordionTitle {
-  font-weight: 700;
-  color: #fde68a; /* Soft amber highlight */
-  font-size: 0.95rem;
-}
-
-.accordionCloseBtn {
-  background: transparent;
-  border: none;
-  color: #94a3b8;
-  font-size: 1rem;
-  cursor: pointer;
-  padding: 0.2rem 0.4rem;
-  line-height: 1;
-}
-
-.accordionCloseBtn:hover {
-  color: #ffffff;
-}
-
-/* Bullet Points List */
-.roleBulletList {
-  list-style-type: disc;
-  padding-left: 1.25rem;
-  margin: 0;
-  display: flex;
-  flex-direction: column;
-  gap: 0.4rem;
-  font-size: 0.825rem;
-  line-height: 1.4;
-  color: #e2e8f0;
-}
-
-.roleBulletList li::marker {
-  color: #f59e0b; /* Amber dot list markers */
-}
-
-/* Card Overlay Base */
-.roleCardOverlayContainer {
-  position: absolute;
-  inset: 0;
+  opacity: 0;
+  transition: opacity 0.3s ease;
   pointer-events: none;
-  display: flex;
-  flex-direction: column;
-  justify-content: flex-end;
-  padding: 1rem;
-  z-index: 15;
+  z-index: 5;
 }
 
-.roleCardOverlayContainer > * {
-  pointer-events: auto;
-}
-
-/* Title bar in bottom-left */
+/* Job Title Bar (Centered & Fit Content) */
 .roleTitleBar {
+  position: relative;
+  z-index: 10;
   display: flex;
   align-items: center;
-  justify-content: space-between;
+  justify-content: center;
   gap: 0.5rem;
+  width: fit-content; /* Hugs text width when accordion is closed */
+  max-width: 100%;
   background: rgba(15, 23, 42, 0.85);
   backdrop-filter: blur(6px);
   padding: 0.5rem 0.85rem;
@@ -182,6 +54,15 @@
   text-shadow: 0 1px 3px rgba(0, 0, 0, 0.8);
 }
 
+/* Title Toggle Visibility (Default: Title 1 shown, Title 2 hidden) */
+.roleTitle .titleClosed {
+  display: inline;
+}
+.roleTitle .titleOpen {
+  display: none;
+}
+
+/* Mobile Toggle Button */
 .roleToggleButton {
   background: rgba(255, 255, 255, 0.15);
   color: #ffffff;
@@ -191,9 +72,7 @@
   font-size: 0.75rem;
   font-weight: 600;
   cursor: pointer;
-  transition:
-    background 0.2s ease,
-    transform 0.1s ease;
+  transition: background 0.2s ease, transform 0.1s ease;
 }
 
 .roleToggleButton:hover {
@@ -280,39 +159,53 @@
    RESPONSIVE HOVER / CLICK BEHAVIOR
    =================================================== */
 
-/* 1. On screens <= 900px: Show button toggle when state is active */
+/* 1. Mobile (<= 900px): Button click toggles the modal, slate backdrop, and title2 */
 @media (max-width: 900px) {
+  .roleCardOverlayContainer.is-open::before {
+    opacity: 1;
+  }
+
   .roleCardOverlayContainer.is-open .roleAccordionBounce {
     display: block;
     animation: bounceLanding 0.4s cubic-bezier(0.34, 1.56, 0.64, 1) forwards;
   }
-  .roleCardOverlayContainer.is-open .roleAccordionBounce {
-    display: block;
-    animation: bounceLanding 0.4s cubic-bezier(0.34, 1.56, 0.64, 1) forwards;
+
+  .roleCardOverlayContainer.is-open .roleTitle .titleClosed {
+    display: none;
+  }
+
+  .roleCardOverlayContainer.is-open .roleTitle .titleOpen {
+    display: inline;
   }
 }
 
-/* 2. On screens > 900px: Auto-open accordion on card hover */
+/* 2. Desktop (> 900px): Hovering ANYWHERE on the image card activates accordion, slate overlay, and title2 */
 @media (min-width: 901px) {
-  /* Hide manual details button on desktop */
-  .roleToggleButton {
-    display: none;
-  }
   .roleToggleButton {
     display: none;
   }
 
-  /* 
-     HOVER CHANGE: Target .roleCardOverlayContainer:hover instead of .imageCardContainer:hover
-     Now hovering the image won't open it—only mouseover on the title bar triggers it.
-  */
-  .roleCardOverlayContainer:hover .roleAccordionBounce {
+  .accordionCloseBtn {
+    display: none;
+  }
+
+  /* Show slate backdrop on image card hover */
+  .imageCardContainer:hover .roleCardOverlayContainer::before {
+    opacity: 1;
+  }
+
+  /* Reveal bounce accordion on image card hover */
+  .imageCardContainer:hover .roleAccordionBounce {
     display: block;
     animation: bounceLanding 0.4s cubic-bezier(0.34, 1.56, 0.64, 1) forwards;
   }
 
-  /* Hide close button on desktop hover */
-  .accordionCloseBtn {
+  /* Switch to title2 on hover */
+  .imageCardContainer:hover .roleTitle .titleClosed {
     display: none;
+  }
+
+  .imageCardContainer:hover .roleTitle .titleOpen {
+    display: inline;
   }
 }
