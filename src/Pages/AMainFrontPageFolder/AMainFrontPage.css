@@ -125,7 +125,7 @@
   background-color: gray;
   color: ivory;
   border: 1px solid rgba(252, 165, 165, 0.6);
-  text-decoration-color: red;
+  text-decoration-color: #22c55e;
 }
 
 .red-dot {
@@ -141,6 +141,20 @@
     transparent 100%
   );
 }
+.amber-dot {
+  width: 1rem;
+  height: 1rem;
+  border-radius: 50%;
+  flex-shrink: 0;
+  background: radial-gradient(
+    circle,
+    #fde68a 0%,
+    /* Bright yellow/amber center */ #f59e0b 40%,
+    /* Vibrant amber */ #78350f 70%,
+    /* Deep amber/brown edge */ transparent 100%
+  );
+}
+
 .brainBuddyIcon {
   display: none;
 }

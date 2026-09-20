@@ -5,6 +5,8 @@ import Alice from "../../Images/Alice.webp";
 import Bruce from "../../Images/Bruce.webp";
 import Amber from "../../Images/Amber.webp";
 import ContactMe from "../../Components/ContactMeFolder/ContactMe.jsx";
+import { RoleCardOverlay } from "../../Components/TeamRoleCardsFolder/TeamRoleCards.jsx";
+
 const BrainBuddys = () => {
   return (
     <div className="grid w-full grid-cols-1 min-[900px]:grid-cols-[1fr_minmax(auto,900px)_1fr]">
@@ -63,47 +65,57 @@ const BrainBuddys = () => {
                   alt="Representative 1"
                   className="representativeImage"
                 />
+                <RoleCardOverlay roleIndex={0} />
               </div>
             </a>
 
             {/* Representative 2 - Unavailable */}
-            <div className="imageCardContainer">
-              <div className="statusBadge badgeUnavailable">
-                <span className="red-dot"></span>
-                &nbsp;Off-line
+            <a href="https://mybabb.com/techsupportpage">
+              <div className="imageCardContainer">
+                <div className="statusBadge badgeUnavailable">
+                  <span className="amber-dot"></span>
+                  &nbsp;Active
+                </div>
+                <img
+                  src={Amber}
+                  alt="Representative 2"
+                  className="representativeImage"
+                />
+                <RoleCardOverlay roleIndex={1} />
               </div>
-              <img
-                src={Amber}
-                alt="Representative 2"
-                className="representativeImage"
-              />
-            </div>
+            </a>
 
             {/* Representative 3 - Unavailable */}
-            <div className="imageCardContainer">
-              <div className="statusBadge badgeUnavailable">
-                <span className="red-dot"></span>
-                &nbsp;Off-line
+            <a href="https://mybabb.com/techsupportpage">
+              <div className="imageCardContainer">
+                <div className="statusBadge badgeUnavailable">
+                  <span className="amber-dot"></span>
+                  &nbsp;Active
+                </div>
+                <img
+                  src={Alice}
+                  alt="Representative 3"
+                  className="representativeImage"
+                />
+                <RoleCardOverlay roleIndex={2} />
               </div>
-              <img
-                src={Alice}
-                alt="Representative 3"
-                className="representativeImage"
-              />
-            </div>
+            </a>
 
             {/* Representative 4 - Unavailable */}
-            <div className="imageCardContainer">
-              <div className="statusBadge badgeUnavailable">
-                <span className="red-dot"></span>
-                &nbsp;Off-line
+            <a href="https://mybabb.com/techsupportpage">
+              <div className="imageCardContainer">
+                <div className="statusBadge badgeUnavailable">
+                  <span className="red-dot"></span>
+                  &nbsp;Off-line
+                </div>
+                <img
+                  src={Bruce}
+                  alt="Representative 4"
+                  className="representativeImage"
+                />
+                <RoleCardOverlay roleIndex={3} />
               </div>
-              <img
-                src={Bruce}
-                alt="Representative 4"
-                className="representativeImage"
-              />
-            </div>
+            </a>
           </div>
         </section>
         <div className="mt-12 flex w-full justify-center">
