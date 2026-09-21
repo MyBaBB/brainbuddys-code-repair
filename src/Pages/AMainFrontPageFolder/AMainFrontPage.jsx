@@ -1,7 +1,7 @@
 import "./AMainFrontPage.css";
 import BlankBrain from "/BrainBuddy100px.png"; // Adjust path as needed
 import Me from "../../Images/Me.webp";
-import Blair from "../../Images/Blair.webp";
+import Blair2 from "../../Images/Blair2.webp";
 import Bruce from "../../Images/Bruce.webp";
 import Amber from "../../Images/Amber.webp";
 import ContactMe from "../../Components/ContactMeFolder/ContactMe.jsx";
@@ -71,7 +71,24 @@ const BrainBuddys = () => {
 
             {/* Representative 2 - Unavailable */}
           <a href="https://mybabb.com/techsupportpage">
-            <div className="imageCardContainer">
+            
+             <div className="imageCardContainer">
+              <div className="statusBadge badgeUnavailable">
+                <span className="amber-dot"></span>
+                &nbsp;Active
+              </div>
+              <img
+                src={Blair2}
+                alt="Representative 3"
+                className="representativeImage"
+              />
+              <RoleCardOverlay roleIndex={2} />
+            </div>
+       </a>
+
+            {/* Representative 3 - Unavailable */}
+       <a href="https://mybabb.com/techsupportpage">
+           <div className="imageCardContainer">
               <div className="statusBadge badgeUnavailable">
                 <span className="amber-dot"></span>
                 &nbsp;Active
@@ -83,22 +100,7 @@ const BrainBuddys = () => {
               />
               <RoleCardOverlay roleIndex={1} />
             </div>
-       </a>
 
-            {/* Representative 3 - Unavailable */}
-       <a href="https://mybabb.com/techsupportpage">
-            <div className="imageCardContainer">
-              <div className="statusBadge badgeUnavailable">
-                <span className="amber-dot"></span>
-                &nbsp;Active
-              </div>
-              <img
-                src={Blair}
-                alt="Representative 3"
-                className="representativeImage"
-              />
-              <RoleCardOverlay roleIndex={2} />
-            </div>
        </a>
 
             {/* Representative 4 - Unavailable */}
