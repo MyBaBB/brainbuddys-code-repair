@@ -2,8 +2,8 @@ import "./AMainFrontPage.css";
 import BlankBrain from "/BrainBuddy100px.png"; // Adjust path as needed
 import Me from "../../Images/Me.webp";
 import Blair2 from "../../Images/Blair2.webp";
-import Bruce from "../../Images/Bruce.webp";
-import Amber from "../../Images/Amber.webp";
+import Bruce3 from "../../Images/Bruce3.webp";
+import Amber2 from "../../Images/Amber2.webp";
 import ContactMe from "../../Components/ContactMeFolder/ContactMe.jsx";
 import { RoleCardOverlay } from "../../Components/TeamRoleCardsFolder/TeamRoleCards.jsx";
 
@@ -94,7 +94,7 @@ const BrainBuddys = () => {
                 &nbsp;Active
               </div>
               <img
-                src={Amber}
+                src={Amber2}
                 alt="Representative 2"
                 className="representativeImage"
               />
@@ -111,7 +111,7 @@ const BrainBuddys = () => {
                 &nbsp;...busy
               </div>
               <img
-                src={Bruce}
+                src={Bruce3}
                 alt="Representative 4"
                 className="representativeImage"
               />
