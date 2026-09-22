@@ -1,9 +1,9 @@
 import "./AMainFrontPage.css";
 import BlankBrain from "/BrainBuddy100px.png";
-import Me from "../../Images/Me.webp";
-import Blair2 from "../../Images/Blair2.webp";
-import Bruce3 from "../../Images/Bruce3.webp";
-import Amber2 from "../../Images/Amber2.webp";
+import MeToday from "../../Images/MeToday600x600.webp";
+import FunkyBird from "../../Images/FunkyBird-900x600-2.webp";
+import BruceNerd from "../../Images/BruceNerd-600x600-2.webp";
+import Amber3 from "../../Images/Interface-crossEyedGirl.webp";
 import ContactMe from "../../Components/ContactMeFolder/ContactMe.jsx";
 import { RoleCardOverlay } from "../../Components/TeamRoleCardsFolder/TeamRoleCards.jsx";
 
@@ -72,7 +72,7 @@ const BrainBuddys = () => {
                   <span className="sr-only">Status: </span>Available
                 </div>
                 <img
-                  src={Me}
+                  src={MeToday}
                   alt="Brett - Lead Web Developer"
                   width="600"
                   height="600"
@@ -91,37 +91,13 @@ const BrainBuddys = () => {
               className="group rounded-xl transition-transform focus-visible:outline focus-visible:outline-2 focus-visible:outline-amber-400"
               aria-label="Connect with Blair - Support Specialist (Status: Active)"
             >
-              <div className="imageCardContainer relative">
+  <div className="imageCardContainer relative">
                 <div className="statusBadge badgeUnavailable">
                   <span className="amber-dot" aria-hidden="true"></span>
                   <span className="sr-only">Status: </span>Active
                 </div>
                 <img
-                  src={Blair2}
-                  alt="Blair - Technical Support Specialist"
-                  width="600"
-                  height="600"
-                  loading="lazy"
-                  decoding="async"
-                  className="representativeImage"
-                />
-                <RoleCardOverlay roleIndex={2} />
-              </div>
-            </a>
-
-            {/* Representative 3 - Lazy Loaded */}
-            <a 
-              href="https://mybabb.com/techsupportpage" 
-              className="group rounded-xl transition-transform focus-visible:outline focus-visible:outline-2 focus-visible:outline-amber-400"
-              aria-label="Connect with Amber - Technical Consultant (Status: Active)"
-            >
-              <div className="imageCardContainer relative">
-                <div className="statusBadge badgeUnavailable">
-                  <span className="amber-dot" aria-hidden="true"></span>
-                  <span className="sr-only">Status: </span>Active
-                </div>
-                <img
-                  src={Amber2}
+                  src={Amber3}
                   alt="Amber - Systems Consultant"
                   width="600"
                   height="600"
@@ -131,6 +107,32 @@ const BrainBuddys = () => {
                 />
                 <RoleCardOverlay roleIndex={1} />
               </div>
+
+            </a>
+
+            {/* Representative 3 - Lazy Loaded */}
+            <a 
+              href="https://mybabb.com/techsupportpage" 
+              className="group rounded-xl transition-transform focus-visible:outline focus-visible:outline-2 focus-visible:outline-amber-400"
+              aria-label="Connect with Amber - Technical Consultant (Status: Active)"
+            >
+             
+              <div className="imageCardContainer relative">
+                <div className="statusBadge badgeUnavailable">
+                  <span className="amber-dot" aria-hidden="true"></span>
+                  <span className="sr-only">Status: </span>Active
+                </div>
+                <img
+                  src={FunkyBird}
+                  alt="Blair - Technical Support Specialist"
+                  width="600"
+                  height="600"
+                  loading="lazy"
+                  decoding="async"
+                  className="representativeImage"
+                />
+                <RoleCardOverlay roleIndex={2} />
+              </div>            
             </a>
 
             {/* Representative 4 - Lazy Loaded */}
@@ -145,7 +147,7 @@ const BrainBuddys = () => {
                   <span className="sr-only">Status: </span>Busy
                 </div>
                 <img
-                  src={Bruce3}
+                  src={BruceNerd}
                   alt="Bruce - Infrastructure Specialist"
                   width="600"
                   height="600"
