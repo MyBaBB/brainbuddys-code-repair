@@ -1,6 +1,6 @@
 import "./AMainFrontPage.css";
 import BlankBrain from "/BrainBuddy100px.png";
-import MeSedona from "../../Images/Me.Sedona600x600.webp";
+import MeArizona from "../../Images/MeArizona600x600.webp";
 import FunkyBird from "../../Images/FunkyBird-900x600-2.webp";
 import BruceNerd from "../../Images/BruceNerd-600x600-2.webp";
 import Amber3 from "../../Images/Interface-crossEyedGirl.webp";
@@ -72,7 +72,7 @@ const BrainBuddys = () => {
                   <span className="sr-only">Status: </span>Available
                 </div>
                 <img
-                  src={MeSedona}
+                  src={MeArizona}
                   alt="Brett - Lead Web Developer"
                   width="600"
                   height="600"
