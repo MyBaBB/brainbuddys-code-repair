@@ -98,7 +98,7 @@
 
 /* --- AVAILABLE BADGE --- */
 .badgeAvailable {
-  background-color: #2e382e;
+  background-color: gray;
   color: #f0fff4;
   border: 1px solid rgba(134, 239, 172, 0.4);
   text-decoration-color: #22c55e;
