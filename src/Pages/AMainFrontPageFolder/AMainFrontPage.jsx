@@ -1,5 +1,5 @@
 import "./AMainFrontPage.css";
-import BlankBrain from "/BrainBuddy100px.png"; // Adjust path as needed
+import BlankBrain from "/BrainBuddy100px.png";
 import Me from "../../Images/Me.webp";
 import Blair2 from "../../Images/Blair2.webp";
 import Bruce3 from "../../Images/Bruce3.webp";
@@ -10,125 +10,142 @@ import { RoleCardOverlay } from "../../Components/TeamRoleCardsFolder/TeamRoleCa
 const BrainBuddys = () => {
   return (
     <div className="grid w-full grid-cols-1 min-[900px]:grid-cols-[1fr_minmax(auto,900px)_1fr]">
-      {/* LEFT SIDEBAR */}
-      <aside className="hidden border-r border-gray-200/20 bg-slate-50/10 p-4 min-[900px]:block"></aside>
+      {/* LEFT SIDEBAR - Marked decorative if empty */}
+      <aside className="hidden border-r border-gray-200/20 bg-slate-50/10 p-4 min-[900px]:block" aria-hidden="true"></aside>
 
       {/* MAIN CONTENT */}
       <main className="relative flex w-full flex-col items-center px-4 pb-20">
-        {/* Logo */}
+        {/* Logo Link */}
         <a
           href="https://mybabb.com/techsupportpage"
-          className="absolute left-4 top-4 z-20 h-[100px] w-[100px] hover:opacity-85"
+          className="absolute left-4 top-4 z-20 h-[100px] w-[100px] rounded-lg focus-visible:outline focus-visible:outline-2 focus-visible:outline-amber-400 hover:opacity-85"
+          aria-label="Brain Buddy Tech Support Home Page"
         >
           <img
             src={BlankBrain}
-            alt="Brain Buddy Image Icon"
+            alt=""
+            aria-hidden="true"
             className="brainBuddyIcon h-full w-full object-contain"
           />
         </a>
 
-        {/* Hero Title */}
-        <section className="relative z-10 mx-auto mt-24 flex w-full max-w-xl flex-col items-center justify-center sm:mt-10">
+        {/* Hero Title Section */}
+        <section className="relative z-10 mx-auto mt-24 flex w-full max-w-xl flex-col items-center justify-center sm:mt-10" aria-labelledby="hero-heading">
           <article className="flex w-full flex-col items-center">
-            <header className="brainBuddysTitleBox relative z-10 flex h-fit w-full flex-col items-center p-2">
-              <h1 className="BrainBuddysH1 z-10 rounded-xl bg-[#33626e] bg-opacity-90 p-2 px-4 text-center font-PTSerif-Bold text-xl sm:text-4xl">
+            <header className="brainBuddysTitleBox relative z-10 flex h-fit w-full flex-col items-center p-2 text-center">
+              <h1 id="hero-heading" className="BrainBuddysH1 z-10 rounded-xl bg-[#33626e] bg-opacity-90 p-2 px-4 font-PTSerif-Bold text-xl sm:text-4xl">
                 <span className="whitespace-nowrap text-amber-100">
                   Brain&nbsp;Buddy&apos;s
                 </span>
               </h1>
-              <br />
-              <span className="relative mt-4 text-center text-xs text-amber-100 sm:text-2xl">
+              <p className="mt-4 text-xs text-amber-100 sm:text-2xl font-medium">
                 Brett&apos;s Web Development and Technical Support
-              </span>
+              </p>
             </header>
 
-            <p className="visually-hidden">
-              Brain Buddy`s is your trusted technical support hub, providing
+            {/* Screen reader summary tied semantically */}
+            <p className="sr-only">
+              Brain Buddy&apos;s is your trusted technical support hub, providing
               expert assistance in web development, troubleshooting, and
               optimization.
             </p>
           </article>
         </section>
 
-        {/* 4 REPRESENTATIVE IMAGES WITH BADGES */}
-        <section className="z-10 mt-12 w-full max-w-[600px] min-[900px]:max-w-full">
+        {/* Team Members Grid */}
+        <section className="z-10 mt-12 w-full max-w-[600px] min-[900px]:max-w-full" aria-label="Support Team Members">
           <div className="grid grid-cols-1 justify-items-center gap-8 min-[900px]:grid-cols-2">
-            {/* Representative 1 - Available */}
-            <a href="https://mybabb.com/techsupportpage">
-              <div className="imageCardContainer">
-                <span className="statusBadge badgeAvailable">
-                  <span className="green-dot"></span>
-                  Available
-                </span>
+            
+            {/* Representative 1 */}
+            <a 
+              href="https://mybabb.com/techsupportpage" 
+              className="group rounded-xl transition-transform focus-visible:outline focus-visible:outline-2 focus-visible:outline-amber-400"
+              aria-label="Connect with Brett - Web Development Representative (Status: Available)"
+            >
+              <div className="imageCardContainer relative">
+                <div className="statusBadge badgeAvailable">
+                  <span className="green-dot" aria-hidden="true"></span>
+                  <span className="sr-only">Status: </span>Available
+                </div>
                 <img
                   src={Me}
-                  alt="Representative 1"
+                  alt="Brett - Lead Web Developer"
                   className="representativeImage"
                 />
                 <RoleCardOverlay roleIndex={0} />
               </div>
-          </a>
+            </a>
 
-            {/* Representative 2 - Unavailable */}
-          <a href="https://mybabb.com/techsupportpage">
-            
-             <div className="imageCardContainer">
-              <div className="statusBadge badgeUnavailable">
-                <span className="amber-dot"></span>
-                &nbsp;Active
+            {/* Representative 2 */}
+            <a 
+              href="https://mybabb.com/techsupportpage" 
+              className="group rounded-xl transition-transform focus-visible:outline focus-visible:outline-2 focus-visible:outline-amber-400"
+              aria-label="Connect with Blair - Support Specialist (Status: Active)"
+            >
+              <div className="imageCardContainer relative">
+                <div className="statusBadge badgeUnavailable">
+                  <span className="amber-dot" aria-hidden="true"></span>
+                  <span className="sr-only">Status: </span>Active
+                </div>
+                <img
+                  src={Blair2}
+                  alt="Blair - Technical Support Specialist"
+                  className="representativeImage"
+                />
+                <RoleCardOverlay roleIndex={2} />
               </div>
-              <img
-                src={Blair2}
-                alt="Representative 3"
-                className="representativeImage"
-              />
-              <RoleCardOverlay roleIndex={2} />
-            </div>
-       </a>
+            </a>
 
-            {/* Representative 3 - Unavailable */}
-       <a href="https://mybabb.com/techsupportpage">
-           <div className="imageCardContainer">
-              <div className="statusBadge badgeUnavailable">
-                <span className="amber-dot"></span>
-                &nbsp;Active
+            {/* Representative 3 */}
+            <a 
+              href="https://mybabb.com/techsupportpage" 
+              className="group rounded-xl transition-transform focus-visible:outline focus-visible:outline-2 focus-visible:outline-amber-400"
+              aria-label="Connect with Amber - Technical Consultant (Status: Active)"
+            >
+              <div className="imageCardContainer relative">
+                <div className="statusBadge badgeUnavailable">
+                  <span className="amber-dot" aria-hidden="true"></span>
+                  <span className="sr-only">Status: </span>Active
+                </div>
+                <img
+                  src={Amber2}
+                  alt="Amber - Systems Consultant"
+                  className="representativeImage"
+                />
+                <RoleCardOverlay roleIndex={1} />
               </div>
-              <img
-                src={Amber2}
-                alt="Representative 2"
-                className="representativeImage"
-              />
-              <RoleCardOverlay roleIndex={1} />
-            </div>
+            </a>
 
-       </a>
-
-            {/* Representative 4 - Unavailable */}
-        <a href="https://mybabb.com/techsupportpage">
-            <div className="imageCardContainer">
-              <div className="statusBadge badgeUnavailable">
-                <span className="red-dot"></span>
-                &nbsp;...busy
+            {/* Representative 4 */}
+            <a 
+              href="https://mybabb.com/techsupportpage" 
+              className="group rounded-xl transition-transform focus-visible:outline focus-visible:outline-2 focus-visible:outline-amber-400"
+              aria-label="Connect with Bruce - Support Engineer (Status: Busy)"
+            >
+              <div className="imageCardContainer relative">
+                <div className="statusBadge badgeUnavailable">
+                  <span className="red-dot" aria-hidden="true"></span>
+                  <span className="sr-only">Status: </span>Busy
+                </div>
+                <img
+                  src={Bruce3}
+                  alt="Bruce - Infrastructure Specialist"
+                  className="representativeImage"
+                />
+                <RoleCardOverlay roleIndex={3} />
               </div>
-              <img
-                src={Bruce3}
-                alt="Representative 4"
-                className="representativeImage"
-              />
-              <RoleCardOverlay roleIndex={3} />
-            </div>
-          </a>
+            </a>
 
-      </div>
-          
+          </div>
         </section>
+
         <div className="mt-12 flex w-full justify-center">
           <ContactMe />
         </div>
       </main>
 
-      {/* RIGHT SIDEBAR */}
-      <aside className="hidden border-l border-gray-200/20 bg-slate-50/10 p-4 min-[900px]:block"></aside>
+      {/* RIGHT SIDEBAR - Marked decorative if empty */}
+      <aside className="hidden border-l border-gray-200/20 bg-slate-50/10 p-4 min-[900px]:block" aria-hidden="true"></aside>
     </div>
   );
 };
