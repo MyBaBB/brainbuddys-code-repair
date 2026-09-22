@@ -25,6 +25,10 @@ const BrainBuddys = () => {
             src={BlankBrain}
             alt=""
             aria-hidden="true"
+            width="100"
+            height="100"
+            loading="eager"
+            decoding="async"
             className="brainBuddyIcon h-full w-full object-contain"
           />
         </a>
@@ -56,7 +60,7 @@ const BrainBuddys = () => {
         <section className="z-10 mt-12 w-full max-w-[600px] min-[900px]:max-w-full" aria-label="Support Team Members">
           <div className="grid grid-cols-1 justify-items-center gap-8 min-[900px]:grid-cols-2">
             
-            {/* Representative 1 */}
+            {/* Representative 1 - High Priority (Above the Fold) */}
             <a 
               href="https://mybabb.com/techsupportpage" 
               className="group rounded-xl transition-transform focus-visible:outline focus-visible:outline-2 focus-visible:outline-amber-400"
@@ -70,13 +74,18 @@ const BrainBuddys = () => {
                 <img
                   src={Me}
                   alt="Brett - Lead Web Developer"
+                  width="600"
+                  height="600"
+                  fetchPriority="high"
+                  loading="eager"
+                  decoding="async"
                   className="representativeImage"
                 />
                 <RoleCardOverlay roleIndex={0} />
               </div>
             </a>
 
-            {/* Representative 2 */}
+            {/* Representative 2 - Lazy Loaded */}
             <a 
               href="https://mybabb.com/techsupportpage" 
               className="group rounded-xl transition-transform focus-visible:outline focus-visible:outline-2 focus-visible:outline-amber-400"
@@ -90,13 +99,17 @@ const BrainBuddys = () => {
                 <img
                   src={Blair2}
                   alt="Blair - Technical Support Specialist"
+                  width="600"
+                  height="600"
+                  loading="lazy"
+                  decoding="async"
                   className="representativeImage"
                 />
                 <RoleCardOverlay roleIndex={2} />
               </div>
             </a>
 
-            {/* Representative 3 */}
+            {/* Representative 3 - Lazy Loaded */}
             <a 
               href="https://mybabb.com/techsupportpage" 
               className="group rounded-xl transition-transform focus-visible:outline focus-visible:outline-2 focus-visible:outline-amber-400"
@@ -110,13 +123,17 @@ const BrainBuddys = () => {
                 <img
                   src={Amber2}
                   alt="Amber - Systems Consultant"
+                  width="600"
+                  height="600"
+                  loading="lazy"
+                  decoding="async"
                   className="representativeImage"
                 />
                 <RoleCardOverlay roleIndex={1} />
               </div>
             </a>
 
-            {/* Representative 4 */}
+            {/* Representative 4 - Lazy Loaded */}
             <a 
               href="https://mybabb.com/techsupportpage" 
               className="group rounded-xl transition-transform focus-visible:outline focus-visible:outline-2 focus-visible:outline-amber-400"
@@ -130,6 +147,10 @@ const BrainBuddys = () => {
                 <img
                   src={Bruce3}
                   alt="Bruce - Infrastructure Specialist"
+                  width="600"
+                  height="600"
+                  loading="lazy"
+                  decoding="async"
                   className="representativeImage"
                 />
                 <RoleCardOverlay roleIndex={3} />
