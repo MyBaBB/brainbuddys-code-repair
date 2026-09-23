@@ -66,11 +66,13 @@ const BrainBuddys = () => {
               className="group rounded-xl transition-transform focus-visible:outline focus-visible:outline-2 focus-visible:outline-amber-400"
               aria-label="Connect with Brett - Web Development Representative (Status: Available)"
             >
-              <div className="imageCardContainer relative">
+
+                <div className="imageCardContainer relative">
                 <div className="statusBadge badgeAvailable">
                   <span className="green-dot" aria-hidden="true"></span>
                   <span className="sr-only">Status:&nbsp;</span>Available
                 </div>
+
                 <img
                   src={MeArizona}
                   alt="Brett - Lead Web Developer"
