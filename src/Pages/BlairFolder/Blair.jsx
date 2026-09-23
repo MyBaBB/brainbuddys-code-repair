@@ -143,7 +143,7 @@ const Blair = () => {
 
       {/* Footer */}
       <footer className="mt-16 text-center text-xs text-slate-500 border-t border-slate-800/60 pt-6 w-full max-w-4xl">
-        © {new Date().getFullYear()} Brain Buddy's Tech Support. All rights reserved.
+        © {new Date().getFullYear()} Brain Buddy&apos;s Tech Support. All rights reserved.
       </footer>
     </div>
   );
