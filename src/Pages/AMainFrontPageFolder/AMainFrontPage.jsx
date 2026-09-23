@@ -69,7 +69,7 @@ const BrainBuddys = () => {
               <div className="imageCardContainer relative">
                 <div className="statusBadge badgeAvailable">
                   <span className="green-dot" aria-hidden="true"></span>
-                  <span className="sr-only">Status: </span>Available
+                  <span className="sr-only">Status:&nbsp;</span>Available
                 </div>
                 <img
                   src={MeArizona}
@@ -94,7 +94,7 @@ const BrainBuddys = () => {
   <div className="imageCardContainer relative">
                 <div className="statusBadge badgeUnavailable">
                   <span className="amber-dot" aria-hidden="true"></span>
-                  <span className="sr-only">Status: </span>Active
+                  <span className="sr-only">Status:&nbsp;</span>Active
                 </div>
                 <img
                   src={Amber3}
@@ -120,7 +120,7 @@ const BrainBuddys = () => {
               <div className="imageCardContainer relative">
                 <div className="statusBadge badgeUnavailable">
                   <span className="amber-dot" aria-hidden="true"></span>
-                  <span className="sr-only">Status: </span>Active
+                  <span className="sr-only">Status:&nbsp;</span>Active
                 </div>
                 <img
                   src={FunkyBird}
@@ -143,8 +143,8 @@ const BrainBuddys = () => {
             >
               <div className="imageCardContainer relative">
                 <div className="statusBadge badgeUnavailable">
-                  <span className="red-dot" aria-hidden="true"></span>
-                  <span className="sr-only">Status: </span>Busy
+                  <span className="amber-dot" aria-hidden="true"></span>
+                  <span className="sr-only">Status:&nbsp;</span>Active
                 </div>
                 <img
                   src={BruceNerd}
