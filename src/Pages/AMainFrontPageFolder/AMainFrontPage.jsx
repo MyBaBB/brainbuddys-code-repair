@@ -1,4 +1,5 @@
 import { useState, useEffect } from "react";
+import { Link } from "react-router-dom";
 import "./AMainFrontPage.css";
 import BlankBrain from "/BrainBuddy100px.png";
 import MeArizona from "../../Images/MeArizona600x600.webp";
@@ -9,17 +10,48 @@ import ContactMe from "../../Components/ContactMeFolder/ContactMe.jsx";
 import { RoleCardOverlay } from "../../Components/TeamRoleCardsFolder/TeamRoleCards.jsx";
 
 const TEAM_MEMBERS = [
-  { id: "brett", name: "Brett", roleIndex: 0, image: MeArizona, priority: "high", alt: "Brett - Lead Web Developer" },
-  { id: "amber", name: "Amber", roleIndex: 1, image: Amber3, priority: "lazy", alt: "Amber - Systems Consultant" },
-  { id: "blair", name: "Blair", roleIndex: 2, image: FunkyBird, priority: "lazy", alt: "Blair - Technical Support Specialist" },
-  { id: "bruce", name: "Bruce", roleIndex: 3, image: BruceNerd, priority: "lazy", alt: "Bruce - Infrastructure Specialist" },
+  {
+    id: "brett",
+    name: "Brett",
+    roleIndex: 0,
+    image: MeArizona,
+    priority: "high",
+    alt: "Brett - Lead Web Developer",
+    path: "/brett",
+  },
+  {
+    id: "amber",
+    name: "Amber",
+    roleIndex: 1,
+    image: Amber3,
+    priority: "lazy",
+    alt: "Amber - Systems Consultant",
+    path: "/amber",
+  },
+  {
+    id: "blair",
+    name: "Blair",
+    roleIndex: 2,
+    image: FunkyBird,
+    priority: "lazy",
+    alt: "Blair - Technical Support Specialist",
+    path: "/blair",
+  },
+  {
+    id: "bruce",
+    name: "Bruce",
+    roleIndex: 3,
+    image: BruceNerd,
+    priority: "lazy",
+    alt: "Bruce - Infrastructure Specialist",
+    path: "/bruce",
+  },
 ];
 
-// Helper to randomly pick 1 or 2 available slots on initial render
 const generateInitialStatuses = (totalMembers) => {
   const availableCount = Math.random() < 0.5 ? 1 : 2;
   const availableIndices = new Set();
-  
+
   while (availableIndices.size < availableCount) {
     const randomIndex = Math.floor(Math.random() * totalMembers);
     availableIndices.add(randomIndex);
@@ -36,31 +68,24 @@ const BrainBuddys = () => {
   );
 
   useEffect(() => {
-    // Timer fires exactly 10 seconds (10,000 ms) after initial load
     const timer = setTimeout(() => {
       setMemberStatuses((prevStatuses) => {
         const nextStatuses = prevStatuses.map((status) => ({ ...status }));
         const currentGreenCount = nextStatuses.filter((s) => s.isAvailable).length;
 
-        // Pick a random member index to attempt to toggle
         const targetIndex = Math.floor(Math.random() * nextStatuses.length);
         const isTargetAvailable = nextStatuses[targetIndex].isAvailable;
 
         if (isTargetAvailable) {
-          // Switching Green -> Amber is always safe (reduces count)
           nextStatuses[targetIndex].isAvailable = false;
         } else {
-          // Attempting Amber -> Green
           if (currentGreenCount < 2) {
-            // Safe to turn green since current green count is less than 2
             nextStatuses[targetIndex].isAvailable = true;
           } else {
-            // Already at 2 greens: turn target green, but turn one existing green amber to maintain max 2 greens
             const greenIndices = nextStatuses
               .map((s, i) => (s.isAvailable ? i : null))
               .filter((i) => i !== null);
 
-            // Randomly pick one of the existing green badges to switch to amber
             const indexToSwap = greenIndices[Math.floor(Math.random() * greenIndices.length)];
 
             nextStatuses[targetIndex].isAvailable = true;
@@ -72,7 +97,6 @@ const BrainBuddys = () => {
       });
     }, 10000);
 
-    // Clean up timer on component unmount
     return () => clearTimeout(timer);
   }, []);
 
@@ -84,8 +108,8 @@ const BrainBuddys = () => {
       {/* MAIN CONTENT */}
       <main className="relative flex w-full flex-col items-center px-4 pb-20">
         {/* Logo Link */}
-        <a
-          href="https://mybabb.com/techsupportpage"
+        <Link
+          to="/amainfrontpage"
           className="absolute left-4 top-4 z-20 h-[100px] w-[100px] rounded-lg focus-visible:outline focus-visible:outline-2 focus-visible:outline-amber-400 hover:opacity-85"
           aria-label="Brain Buddy Tech Support Home Page"
         >
@@ -99,7 +123,7 @@ const BrainBuddys = () => {
             decoding="async"
             className="brainBuddyIcon h-full w-full object-contain"
           />
-        </a>
+        </Link>
 
         {/* Hero Title Section */}
         <section className="relative z-10 mx-auto mt-24 flex w-full max-w-xl flex-col items-center justify-center sm:mt-10" aria-labelledby="hero-heading">
@@ -131,14 +155,13 @@ const BrainBuddys = () => {
               const statusText = isAvailable ? "AVAILABLE" : "ON-A-CALL";
 
               return (
-                <a
+                <Link
                   key={member.id}
-                  href="https://mybabb.com/techsupportpage"
+                  to={member.path}
                   className="group rounded-xl transition-transform focus-visible:outline focus-visible:outline-2 focus-visible:outline-amber-400"
                   aria-label={`Connect with ${member.name} (Status: ${statusText})`}
                 >
                   <div className="imageCardContainer relative">
-                    {/* Status Badge with soft fade transition */}
                     <div className={`statusBadge ${isAvailable ? "badgeAvailable" : "badgeUnavailable"}`}>
                       <span className={isAvailable ? "green-dot" : "amber-dot"} aria-hidden="true"></span>
                       <span className="sr-only">Status:&nbsp;</span>
@@ -157,7 +180,7 @@ const BrainBuddys = () => {
                     />
                     <RoleCardOverlay roleIndex={member.roleIndex} />
                   </div>
-                </a>
+                </Link>
               );
             })}
           </div>

@@ -184,3 +184,20 @@
   /* Smooth color/border state change transition */
   transition: background-color 0.5s ease, border-color 0.5s ease, color 0.5s ease;
 }
+/* Ensure the overlay container allows clicks to pass through to the <Link> */
+.roleCardOverlayContainer {
+  position: absolute;
+  inset: 0;
+  pointer-events: none; /* Passes clicks directly to the underlying <Link> */
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  align-items: center;
+  padding: 1rem;
+  z-index: 15;
+}
+
+/* Remove any pointer-events: auto on children so the entire accordion area remains clickable */
+.roleCardOverlayContainer * {
+  pointer-events: none !important;
+}
