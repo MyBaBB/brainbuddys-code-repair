@@ -1,3 +1,4 @@
+import { useState, useEffect } from "react";
 import "./AMainFrontPage.css";
 import BlankBrain from "/BrainBuddy100px.png";
 import MeArizona from "../../Images/MeArizona600x600.webp";
@@ -7,10 +8,77 @@ import Amber3 from "../../Images/Interface-crossEyedGirl.webp";
 import ContactMe from "../../Components/ContactMeFolder/ContactMe.jsx";
 import { RoleCardOverlay } from "../../Components/TeamRoleCardsFolder/TeamRoleCards.jsx";
 
+const TEAM_MEMBERS = [
+  { id: "brett", name: "Brett", roleIndex: 0, image: MeArizona, priority: "high", alt: "Brett - Lead Web Developer" },
+  { id: "amber", name: "Amber", roleIndex: 1, image: Amber3, priority: "lazy", alt: "Amber - Systems Consultant" },
+  { id: "blair", name: "Blair", roleIndex: 2, image: FunkyBird, priority: "lazy", alt: "Blair - Technical Support Specialist" },
+  { id: "bruce", name: "Bruce", roleIndex: 3, image: BruceNerd, priority: "lazy", alt: "Bruce - Infrastructure Specialist" },
+];
+
+// Helper to randomly pick 1 or 2 available slots on initial render
+const generateInitialStatuses = (totalMembers) => {
+  const availableCount = Math.random() < 0.5 ? 1 : 2;
+  const availableIndices = new Set();
+  
+  while (availableIndices.size < availableCount) {
+    const randomIndex = Math.floor(Math.random() * totalMembers);
+    availableIndices.add(randomIndex);
+  }
+
+  return Array.from({ length: totalMembers }, (_, index) => ({
+    isAvailable: availableIndices.has(index),
+  }));
+};
+
 const BrainBuddys = () => {
+  const [memberStatuses, setMemberStatuses] = useState(() =>
+    generateInitialStatuses(TEAM_MEMBERS.length)
+  );
+
+  useEffect(() => {
+    // Timer fires exactly 10 seconds (10,000 ms) after initial load
+    const timer = setTimeout(() => {
+      setMemberStatuses((prevStatuses) => {
+        const nextStatuses = prevStatuses.map((status) => ({ ...status }));
+        const currentGreenCount = nextStatuses.filter((s) => s.isAvailable).length;
+
+        // Pick a random member index to attempt to toggle
+        const targetIndex = Math.floor(Math.random() * nextStatuses.length);
+        const isTargetAvailable = nextStatuses[targetIndex].isAvailable;
+
+        if (isTargetAvailable) {
+          // Switching Green -> Amber is always safe (reduces count)
+          nextStatuses[targetIndex].isAvailable = false;
+        } else {
+          // Attempting Amber -> Green
+          if (currentGreenCount < 2) {
+            // Safe to turn green since current green count is less than 2
+            nextStatuses[targetIndex].isAvailable = true;
+          } else {
+            // Already at 2 greens: turn target green, but turn one existing green amber to maintain max 2 greens
+            const greenIndices = nextStatuses
+              .map((s, i) => (s.isAvailable ? i : null))
+              .filter((i) => i !== null);
+
+            // Randomly pick one of the existing green badges to switch to amber
+            const indexToSwap = greenIndices[Math.floor(Math.random() * greenIndices.length)];
+
+            nextStatuses[targetIndex].isAvailable = true;
+            nextStatuses[indexToSwap].isAvailable = false;
+          }
+        }
+
+        return nextStatuses;
+      });
+    }, 10000);
+
+    // Clean up timer on component unmount
+    return () => clearTimeout(timer);
+  }, []);
+
   return (
     <div className="grid w-full grid-cols-1 min-[900px]:grid-cols-[1fr_minmax(auto,900px)_1fr]">
-      {/* LEFT SIDEBAR - Marked decorative if empty */}
+      {/* LEFT SIDEBAR */}
       <aside className="hidden border-r border-gray-200/20 bg-slate-50/10 p-4 min-[900px]:block" aria-hidden="true"></aside>
 
       {/* MAIN CONTENT */}
@@ -42,12 +110,11 @@ const BrainBuddys = () => {
                   Brain&nbsp;Buddy&apos;s
                 </span>
               </h1>
-              <p className="mt-4 text-xs text-amber-100 sm:text-2xl font-medium">
+              <p className="mt-4 text-xs font-medium text-amber-100 sm:text-2xl">
                 Brett&apos;s Web Development and Technical Support
               </p>
             </header>
 
-            {/* Screen reader summary tied semantically */}
             <p className="sr-only">
               Brain Buddy&apos;s is your trusted technical support hub, providing
               expert assistance in web development, troubleshooting, and
@@ -59,108 +126,40 @@ const BrainBuddys = () => {
         {/* Team Members Grid */}
         <section className="z-10 mt-12 w-full max-w-[600px] min-[900px]:max-w-full" aria-label="Support Team Members">
           <div className="grid grid-cols-1 justify-items-center gap-8 min-[900px]:grid-cols-2">
-            
-            {/* Representative 1 - High Priority (Above the Fold) */}
-            <a 
-              href="https://mybabb.com/techsupportpage" 
-              className="group rounded-xl transition-transform focus-visible:outline focus-visible:outline-2 focus-visible:outline-amber-400"
-              aria-label="Connect with Brett - Web Development Representative (Status: Available)"
-            >
+            {TEAM_MEMBERS.map((member, index) => {
+              const isAvailable = memberStatuses[index]?.isAvailable;
+              const statusText = isAvailable ? "AVAILABLE" : "ON-A-CALL";
 
-                <div className="imageCardContainer relative">
-                <div className="statusBadge badgeAvailable">
-                  <span className="green-dot" aria-hidden="true"></span>
-                  <span className="sr-only">Status:&nbsp;</span>Available
-                </div>
+              return (
+                <a
+                  key={member.id}
+                  href="https://mybabb.com/techsupportpage"
+                  className="group rounded-xl transition-transform focus-visible:outline focus-visible:outline-2 focus-visible:outline-amber-400"
+                  aria-label={`Connect with ${member.name} (Status: ${statusText})`}
+                >
+                  <div className="imageCardContainer relative">
+                    {/* Status Badge with soft fade transition */}
+                    <div className={`statusBadge ${isAvailable ? "badgeAvailable" : "badgeUnavailable"}`}>
+                      <span className={isAvailable ? "green-dot" : "amber-dot"} aria-hidden="true"></span>
+                      <span className="sr-only">Status:&nbsp;</span>
+                      {statusText}
+                    </div>
 
-                <img
-                  src={MeArizona}
-                  alt="Brett - Lead Web Developer"
-                  width="600"
-                  height="600"
-                  fetchPriority="high"
-                  loading="eager"
-                  decoding="async"
-                  className="representativeImage"
-                />
-                <RoleCardOverlay roleIndex={0} />
-              </div>
-            </a>
-
-            {/* Representative 2 - Lazy Loaded */}
-            <a 
-              href="https://mybabb.com/techsupportpage" 
-              className="group rounded-xl transition-transform focus-visible:outline focus-visible:outline-2 focus-visible:outline-amber-400"
-              aria-label="Connect with Blair - Support Specialist (Status: Active)"
-            >
-  <div className="imageCardContainer relative">
-                <div className="statusBadge badgeUnavailable">
-                  <span className="amber-dot" aria-hidden="true"></span>
-                  <span className="sr-only">Status:&nbsp;</span>Active
-                </div>
-                <img
-                  src={Amber3}
-                  alt="Amber - Systems Consultant"
-                  width="600"
-                  height="600"
-                  loading="lazy"
-                  decoding="async"
-                  className="representativeImage"
-                />
-                <RoleCardOverlay roleIndex={1} />
-              </div>
-
-            </a>
-
-            {/* Representative 3 - Lazy Loaded */}
-            <a 
-              href="https://mybabb.com/techsupportpage" 
-              className="group rounded-xl transition-transform focus-visible:outline focus-visible:outline-2 focus-visible:outline-amber-400"
-              aria-label="Connect with Amber - Technical Consultant (Status: Active)"
-            >
-             
-              <div className="imageCardContainer relative">
-                <div className="statusBadge badgeUnavailable">
-                  <span className="amber-dot" aria-hidden="true"></span>
-                  <span className="sr-only">Status:&nbsp;</span>Active
-                </div>
-                <img
-                  src={FunkyBird}
-                  alt="Blair - Technical Support Specialist"
-                  width="600"
-                  height="600"
-                  loading="lazy"
-                  decoding="async"
-                  className="representativeImage"
-                />
-                <RoleCardOverlay roleIndex={2} />
-              </div>            
-            </a>
-
-            {/* Representative 4 - Lazy Loaded */}
-            <a 
-              href="https://mybabb.com/techsupportpage" 
-              className="group rounded-xl transition-transform focus-visible:outline focus-visible:outline-2 focus-visible:outline-amber-400"
-              aria-label="Connect with Bruce - Support Engineer (Status: Busy)"
-            >
-              <div className="imageCardContainer relative">
-                <div className="statusBadge badgeUnavailable">
-                  <span className="amber-dot" aria-hidden="true"></span>
-                  <span className="sr-only">Status:&nbsp;</span>Active
-                </div>
-                <img
-                  src={BruceNerd}
-                  alt="Bruce - Infrastructure Specialist"
-                  width="600"
-                  height="600"
-                  loading="lazy"
-                  decoding="async"
-                  className="representativeImage"
-                />
-                <RoleCardOverlay roleIndex={3} />
-              </div>
-            </a>
-
+                    <img
+                      src={member.image}
+                      alt={member.alt}
+                      width="600"
+                      height="600"
+                      fetchPriority={member.priority === "high" ? "high" : "auto"}
+                      loading={member.priority === "high" ? "eager" : "lazy"}
+                      decoding="async"
+                      className="representativeImage"
+                    />
+                    <RoleCardOverlay roleIndex={member.roleIndex} />
+                  </div>
+                </a>
+              );
+            })}
           </div>
         </section>
 
@@ -169,7 +168,7 @@ const BrainBuddys = () => {
         </div>
       </main>
 
-      {/* RIGHT SIDEBAR - Marked decorative if empty */}
+      {/* RIGHT SIDEBAR */}
       <aside className="hidden border-l border-gray-200/20 bg-slate-50/10 p-4 min-[900px]:block" aria-hidden="true"></aside>
     </div>
   );

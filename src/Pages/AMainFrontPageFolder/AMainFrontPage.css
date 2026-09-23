@@ -163,3 +163,24 @@
     display: block;
   }
 }
+.statusBadge {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  z-index: 20;
+  padding: 0.35rem 0.85rem;
+  font-size: 0.85rem;
+  font-weight: 700;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  border-radius: 9999px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.5);
+  backdrop-filter: blur(4px);
+  
+  /* Fixed width so text width shifts don't jitter */
+  min-width: 140px;
+  justify-content: center;
+  
+  /* Smooth color/border state change transition */
+  transition: background-color 0.5s ease, border-color 0.5s ease, color 0.5s ease;
+}
