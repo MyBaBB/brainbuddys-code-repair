@@ -1,19 +1,18 @@
- import "./Blair.css"
- 
+import React from "react";
 import { Link } from "react-router-dom";
-import BlairImg from "../../Images/FunkyBird-900x600-2.webp"; // Update image path if needed
+import FunkyBird from "../../Images/FunkyBird-900x600-2.webp";
 import BlankBrain from "/BrainBuddy100px.png";
 
 const Blair = () => {
   const skills = [
-    "Backend Architecture",
-    "Database Management",
-    "Node.js / Express",
-    "RESTful API Design",
-    "Security & Auth",
-    "Cloud Operations",
-    "System Monitoring",
-    "SQL / PostgreSQL",
+    "Digital Illustration",
+    "Video Creation & Editing",
+    "Social Media Graphics",
+    "Content Creation",
+    "Motion Graphics & Animation",
+    "Brand Identity & Visuals",
+    "Character & Asset Design",
+    "Creative Direction",
   ];
 
   return (
@@ -51,8 +50,8 @@ const Blair = () => {
           <div className="relative group flex-shrink-0">
             <div className="w-48 h-48 sm:w-56 sm:h-56 rounded-2xl overflow-hidden border-2 border-amber-400/40 shadow-xl transition-transform duration-300 group-hover:scale-[1.02]">
               <img
-                src={BlairImg}
-                alt="Blair - Backend Developer & Systems Specialist"
+                src={FunkyBird}
+                alt="Blair - Digital Artist & Media Creator"
                 className="w-full h-full object-cover"
               />
             </div>
@@ -67,14 +66,13 @@ const Blair = () => {
           {/* Profile Bio */}
           <div className="flex flex-col text-center md:text-left gap-3">
             <span className="text-amber-400 font-mono text-sm tracking-widest uppercase font-semibold">
-              Backend Developer & Systems Specialist
+              Digital Artist & Creative Media Specialist
             </span>
             <h1 className="text-3xl sm:text-5xl font-extrabold text-white tracking-tight">
               Blair
             </h1>
             <p className="text-slate-300 text-sm sm:text-base leading-relaxed mt-1">
-              Architecting secure backend services, API pipelines, and high-performance server structures. 
-              Dedicated to data integrity, system scalability, and smooth server-side execution.
+              Crafting engaging visual content—from original digital illustration and social media graphics to video editing, motion assets, and creative design systems that make brands pop.
             </p>
 
             {/* Brain Buddy Logo + Animated Pop-up Badge */}
@@ -106,7 +104,7 @@ const Blair = () => {
         <section id="skills" className="flex flex-col gap-6">
           <h2 className="text-xl font-bold text-slate-200 flex items-center gap-3">
             <span className="w-2 h-6 bg-amber-400 rounded-full"></span>
-            Technical Expertise
+            Artistic & Media Production Expertise
           </h2>
 
           <div className="grid grid-cols-2 sm:grid-cols-4 gap-4">
@@ -145,7 +143,7 @@ const Blair = () => {
 
       {/* Footer */}
       <footer className="mt-16 text-center text-xs text-slate-500 border-t border-slate-800/60 pt-6 w-full max-w-4xl">
-        © {new Date().getFullYear()} Brain Buddy&apos;s Tech Support. All rights reserved.
+        © {new Date().getFullYear()} Brain Buddy's Tech Support. All rights reserved.
       </footer>
     </div>
   );
