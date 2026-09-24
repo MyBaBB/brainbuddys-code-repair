@@ -1,6 +1,6 @@
  
 import { Link } from "react-router-dom";
-import IndianArt from "../../Images/TiguaIndians.webp";
+import TurquoiseCross from "../../Images/TurquoiseCross-600x600.webp";
 import BlankBrain from "/BrainBuddy100px.png";
 
 const Blair = () => {
@@ -50,7 +50,7 @@ const Blair = () => {
           <div className="relative group flex-shrink-0">
             <div className="w-48 h-48 sm:w-56 sm:h-56 rounded-2xl overflow-hidden border-2 border-amber-400/40 shadow-xl transition-transform duration-300 group-hover:scale-[1.02]">
               <img
-                src={IndianArt}
+                src={TurquoiseCross}
                 alt="Blair - Digital Artist & Media Creator"
                 className="w-full h-full object-cover"
               />

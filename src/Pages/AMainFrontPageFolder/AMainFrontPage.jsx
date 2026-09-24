@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 import "./AMainFrontPage.css";
 import BlankBrain from "/BrainBuddy100px.png";
 import MeArizona from "../../Images/MeArizona600x600.webp";
-import IndianArt from "../../Images/TiguaIndians.webp";
+import TurquoiseCross from "../../Images/TurquoiseCross-600x600.webp";
 import BruceNerd from "../../Images/BruceNerd-600x600-2.webp";
 import Amber3 from "../../Images/Interface-crossEyedGirl.webp";
 import ContactMe from "../../Components/ContactMeFolder/ContactMe.jsx";
@@ -23,7 +23,7 @@ const TEAM_MEMBERS = [
     id: "blair",
     name: "Blair",
     roleIndex: 2,
-    image: IndianArt,
+    image: TurquoiseCross,
     priority: "lazy",
     alt: "Blair - Technical Support Specialist",
     path: "/blair",
@@ -109,9 +109,9 @@ const BrainBuddys = () => {
       {/* MAIN CONTENT */}
       <main className="relative flex w-full flex-col items-center px-4 pb-20">
         {/* Logo Link */}
-        <Link
+        <div
           to="/amainfrontpage"
-          className="absolute left-4 top-4 z-20 h-[100px] w-[100px] rounded-lg focus-visible:outline focus-visible:outline-2 focus-visible:outline-amber-400 hover:opacity-85"
+          className="absolute left-4 top-4 z-20 h-[100px] w-[100px] rounded-lg focus-visible:outline focus-visible:outline-2 focus-visible:outline-amber-400  "
           aria-label="Brain Buddy Tech Support Home Page"
         >
           <img
@@ -124,10 +124,10 @@ const BrainBuddys = () => {
             decoding="async"
             className="brainBuddyIcon h-full w-full object-contain"
           />
-        </Link>
+        </div>
 
         {/* Hero Title Section */}
-        <section className="relative z-10 mx-auto mt-24 flex w-full max-w-xl flex-col items-center justify-center sm:mt-10" aria-labelledby="hero-heading">
+        <section className="relative z-10 mx-auto mt-24 flex w-full max-w-xl flex-col items-center justify-center sm:mt-[2.25rem]" aria-labelledby="hero-heading">
           <article className="flex w-full flex-col items-center">
             <header className="brainBuddysTitleBox relative z-10 flex h-fit w-full flex-col items-center p-2 text-center">
               <h1 id="hero-heading" className="BrainBuddysH1 z-10 rounded-xl bg-[#33626e] bg-opacity-90 p-2 px-4 font-PTSerif-Bold text-xl sm:text-4xl">
@@ -140,7 +140,7 @@ const BrainBuddys = () => {
               </p>
             </header>
 
-            <p className="sr-only">
+            <p className="sr-only text-xs">
               Brain Buddy&apos;s is your trusted technical support hub, providing
               expert assistance in web development, troubleshooting, and
               optimization.
@@ -149,7 +149,7 @@ const BrainBuddys = () => {
         </section>
 
         {/* Team Members Grid */}
-        <section className="z-10 mt-12 w-full max-w-[600px] min-[900px]:max-w-full" aria-label="Support Team Members">
+        <section className="z-10 mt-4 w-full max-w-[600px] min-[900px]:max-w-full" aria-label="Support Team Members">
           <div className="grid grid-cols-1 justify-items-center gap-8 min-[900px]:grid-cols-2">
             {TEAM_MEMBERS.map((member, index) => {
               const isAvailable = memberStatuses[index]?.isAvailable;
