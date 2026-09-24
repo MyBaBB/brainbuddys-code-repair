@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 import "./AMainFrontPage.css";
 import BlankBrain from "/BrainBuddy100px.png";
 import MeArizona from "../../Images/MeArizona600x600.webp";
-import FunkyBird from "../../Images/FunkyBird-900x600-2.webp";
+import IndianArt from "../../Images/TiguaIndians.webp";
 import BruceNerd from "../../Images/BruceNerd-600x600-2.webp";
 import Amber3 from "../../Images/Interface-crossEyedGirl.webp";
 import ContactMe from "../../Components/ContactMeFolder/ContactMe.jsx";
@@ -19,6 +19,15 @@ const TEAM_MEMBERS = [
     alt: "Brett - Lead Web Developer",
     path: "/brett",
   },
+   {
+    id: "blair",
+    name: "Blair",
+    roleIndex: 2,
+    image: IndianArt,
+    priority: "lazy",
+    alt: "Blair - Technical Support Specialist",
+    path: "/blair",
+  },
   {
     id: "amber",
     name: "Amber",
@@ -28,15 +37,7 @@ const TEAM_MEMBERS = [
     alt: "Amber - Systems Consultant",
     path: "/amber",
   },
-  {
-    id: "blair",
-    name: "Blair",
-    roleIndex: 2,
-    image: FunkyBird,
-    priority: "lazy",
-    alt: "Blair - Technical Support Specialist",
-    path: "/blair",
-  },
+ 
   {
     id: "bruce",
     name: "Bruce",
