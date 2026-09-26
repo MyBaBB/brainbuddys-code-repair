@@ -21,7 +21,17 @@ To create an engaging, memorable, and visually structured experience, the platfo
 </p>
  
  
-# BrainBuddys (brainbuddys.com) – Code Repair & Technical Support Services
+# BrainBuddys | Custom Web Development & Code Repair
+
+Did AI (v0, Bolt, Cursor, ChatGPT) get your website 80% of the way there, but leave you with broken features? 
+
+BrainBuddys provides custom web development, code repair, and bug fixing to turn fragile AI prototypes into clean, fast, production-ready applications.
+
+### What We Do
+- **AI Code Repair & Debugging:** Fix broken forms, layout bugs, API errors, and state issues in AI-generated sites.
+- **Custom Features & Extensions:** Write clean, hand-crafted code for features AI models can't handle.
+- **Performance & SEO Optimization:** Clean up bloated AI-generated code to boost load speeds and Google rankings.
+
 
  
 
