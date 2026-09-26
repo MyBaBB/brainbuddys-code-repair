@@ -1,57 +1,97 @@
 <!doctype html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="google-site-verification" content="0nm9pxZd_zFa1XsJB2Mi4msS95V46ShscaTZBFTmHXM" />
-    <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate" />
-    <meta http-equiv="Cache-Control" content="max-age=604800" />
-<link rel="preload" href="favicon11.png" as="image">
-<link rel="preload" href="favicon22.png" as="image">
-<link rel="preload" href="favicon33.png" as="image">
-    <link id="favicon" rel="icon" href="favicon11.png" type="image/x-icon">
-
-
+<head>
+  <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="Expert technical support for web development, troubleshooting, and optimization. Schedule an appointment or reach out for assistance.">
-  <meta name="keywords" content=" Brain Buddy,  technical support, web development, Coding, brain buddies. brainbuddies, web development,  troubleshooting, optimization  ">
-  <meta name="author" content="Brain Buddy's Team">
-  <meta name="robots" content="index, follow">
 
-  <title>Brain Buddy | Expert Coding & Technical Support</title>
+  <!-- Google Site Verification -->
+  <meta name="google-site-verification" content="0nm9pxZd_zFa1XsJB2Mi4msS95V46ShscaTZBFTmHXM" />
 
-  <!-- Open Graph for social media -->
-  <meta property="og:title" content="Brain Buddy | Web Development & Technical Support">
-  <meta property="og:description" content="Get expert assistance in web development, coding, and troubleshooting. Schedule an appointment or email us when you're stuck!">
-  <meta property="og:image" content="https://images.brainbuddys.com/ogProtocol/Brain35Buddy2Star1200x630.png">
-  <meta property="og:type" content="website">
+  <!-- Primary SEO Meta Tags -->
+  <title>BrainBuddy's Tech Support & Code Repair | BrainBuddys</title>
+  <meta name="description" content="Brain Buddy's Tech Support (BrainBuddys) by Brett. Professional web development, custom React code repair, troubleshooting, and full-stack technical assistance." />
+  <meta name="keywords" content="Brain Buddy, BrainBuddy, BrainBuddys, Brain Buddies, brainbuddies, BrainBuddy code repair, Brett web developer, MyBABB, technical support, web development, coding repair, React troubleshooting, software maintenance" />
+  <meta name="author" content="Brett - Brain Buddy's Tech Support" />
+  <meta name="robots" content="index, follow, max-image-preview:large" />
 
-  <!-- Twitter Card -->
-  <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="Expert Web Support">
-  <meta name="twitter:description" content="Expert Coding & Technical Support, BrainBuddys, Helping You Solve Your Coding Problems.">
-  <meta name="twitter:image" content="https://images.brainbuddys.com/ogProtocol/Brain35Buddy2Star1200x630.png">
-</head>
-  
-  <body>
-    <div id="root"></div>
-    <script type="module" src="/src/main.jsx"> </script>  
-  </body>  
-   <script>
-  const favicons = ["favicon11.png", "favicon22.png", "favicon33.png"];
-  let current = 0;
+  <!-- Canonical URL -->
+  <link rel="canonical" href="https://brainbuddys.com/" />
 
-  function flicker() {
-    const link = document.getElementById("favicon");
-    current = (current + 1) % favicons.length;
-    link.href = favicons[current];
+  <!-- Favicons & Icon Preloading -->
+  <link rel="preload" href="/favicon11.png" as="image" />
+  <link rel="preload" href="/favicon22.png" as="image" />
+  <link rel="preload" href="/favicon33.png" as="image" />
+  <link id="favicon" rel="icon" href="/favicon11.png" type="image/x-icon" />
 
-    // Random delay between 300ms and 3000ms
-    const delay = Math.floor(Math.random() * (3000 - 300 + 1)) + 300;
-    setTimeout(flicker, delay);
+  <!-- Open Graph / Facebook / LinkedIn Protocol -->
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://brainbuddys.com/" />
+  <meta property="og:site_name" content="Brain Buddy's Tech Support" />
+  <meta property="og:title" content="BrainBuddy's Tech Support & Custom Code Repair | BrainBuddys" />
+  <meta property="og:description" content="Get expert assistance in web development, custom React code repair, and technical troubleshooting from Brett at Brain Buddy's Tech Support." />
+  <meta property="og:image" content="https://images.brainbuddys.com/ogProtocol/Brain35Buddy2Star1200x630.png" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+  <meta property="og:image:alt" content="Brain Buddy's Tech Support and Code Repair Logo" />
+
+  <!-- Twitter / X Card Metadata -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="BrainBuddy's Tech Support & Code Repair" />
+  <meta name="twitter:description" content="Expert Web Development, Custom Code Repair & Technical Assistance by Brett. BrainBuddys / MyBABB." />
+  <meta name="twitter:image" content="https://images.brainbuddys.com/ogProtocol/Brain35Buddy2Star1200x630.png" />
+
+  <!-- JSON-LD Structured Data Schema -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "ProfessionalService",
+    "name": "Brain Buddy's Tech Support",
+    "alternateName": ["BrainBuddy", "BrainBuddys", "Brain Buddies", "BrainBuddy Code Repair"],
+    "url": "https://brainbuddys.com",
+    "logo": "https://images.brainbuddys.com/ogProtocol/Brain35Buddy2Star1200x630.png",
+    "description": "Provider of web development, custom software code repair, React application troubleshooting, and full-stack technical support.",
+    "founder": {
+      "@type": "Person",
+      "name": "Brett",
+      "jobTitle": "Lead Web Developer & Architect"
+    },
+    "sameAs": [
+      "https://mybabb.com",
+      "https://contact.mybabb.com",
+      "https://about.us.mybabb.com"
+    ],
+    "areaServed": "Global",
+    "serviceType": [
+      "Web Development",
+      "Software Code Repair",
+      "Technical Support",
+      "React Debugging"
+    ]
   }
+  </script>
+</head>
+<body>
+  <div id="root"></div>
+  <script type="module" src="/src/main.jsx"></script>
 
-  flicker(); // Start the flicker loop
-</script>
- 
- 
+  <!-- Favicon Animation Script -->
+  <script>
+    const favicons = ["/favicon11.png", "/favicon22.png", "/favicon33.png"];
+    let current = 0;
+
+    function flicker() {
+      const link = document.getElementById("favicon");
+      if (link) {
+        current = (current + 1) % favicons.length;
+        link.href = favicons[current];
+      }
+
+      // Random delay between 300ms and 3000ms
+      const delay = Math.floor(Math.random() * (3000 - 300 + 1)) + 300;
+      setTimeout(flicker, delay);
+    }
+
+    flicker();
+  </script>
+</body>
 </html>
