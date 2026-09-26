@@ -1,9 +1,22 @@
-import React from "react";
+import { useEffect } from "react";
 import { Link } from "react-router-dom";
 import MeArizona from "../../Images/MeArizona600x600.webp";
 import BlankBrain from "/BrainBuddy100px.png";
 
 const Brett = () => {
+  // Dynamic SEO Document Metadata & Canonical Tag
+  useEffect(() => {
+    document.title = "Brett | Lead Developer & Architect | BrainBuddys";
+
+    let canonicalLink = document.querySelector("link[rel='canonical']");
+    if (!canonicalLink) {
+      canonicalLink = document.createElement("link");
+      canonicalLink.setAttribute("rel", "canonical");
+      document.head.appendChild(canonicalLink);
+    }
+    canonicalLink.setAttribute("href", "https://brainbuddys.com/brett");
+  }, []);
+
   const skills = [
     "React / JSX",
     "Tailwind CSS",
@@ -33,6 +46,8 @@ const Brett = () => {
         {/* About Us button in the header */}
         <a
           href="https://about.us.mybabb.com"
+          target="_blank"
+          rel="noopener noreferrer"
           className="px-6 py-2 rounded-xl bg-amber-500 hover:bg-amber-400 text-slate-950 font-bold text-sm transition-all shadow-md active:scale-95"
         >
           About Us
@@ -51,7 +66,7 @@ const Brett = () => {
             <div className="w-48 h-48 sm:w-56 sm:h-56 rounded-2xl overflow-hidden border-2 border-amber-400/40 shadow-xl transition-transform duration-300 group-hover:scale-[1.02]">
               <img
                 src={MeArizona}
-                alt="Brett - Lead Web Developer"
+                alt="Brett - Lead Web Developer at BrainBuddy Tech Support"
                 className="w-full h-full object-cover"
               />
             </div>
@@ -66,28 +81,30 @@ const Brett = () => {
           {/* Profile Bio */}
           <div className="flex flex-col text-center md:text-left gap-3">
             <span className="text-amber-400 font-mono text-sm tracking-widest uppercase font-semibold">
-              Lead Web Developer & Architect
+              Lead Web Developer &amp; Architect
             </span>
             <h1 className="text-3xl sm:text-5xl font-extrabold text-white tracking-tight">
               Brett
             </h1>
             <p className="text-slate-300 text-sm sm:text-base leading-relaxed mt-1">
-              Building high-performance, accessible, and dynamic modern web applications. 
-              Specializing in custom React architectures, responsive layouts, and smooth 
-              interactive user experiences.
+              Founder and Lead Developer behind BrainBuddy&apos;s Tech Support (BrainBuddys / MyBABB). 
+              Building high-performance, accessible modern web applications, custom React code repair, 
+              and robust full-stack architecture.
             </p>
 
             {/* Brain Buddy Logo + Animated Pop-up Badge */}
             <div className="flex items-center justify-center md:justify-start mt-4">
               <a
                 href="https://mybabb.com/techsupportpage"
-                aria-label="Get Brain Buddy Tech Support"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="Get BrainBuddy Tech Support & Code Repair"
                 className="group flex items-center gap-3 hover:opacity-95 transition-opacity focus-visible:outline focus-visible:outline-2 focus-visible:outline-amber-400 rounded-xl"
               >
                 <div className="p-1 bg-slate-900/60 border border-slate-800 rounded-lg shrink-0 group-hover:border-amber-400/50 transition-colors">
                   <img
                     src={BlankBrain}
-                    alt="Brain Buddy Logo"
+                    alt="BrainBuddy Tech Support Logo"
                     className="w-14 h-14 object-contain opacity-90"
                   />
                 </div>
@@ -95,7 +112,7 @@ const Brett = () => {
                 {/* Pop-up Tooltip Badge inside the link */}
                 <div className="relative animate-bounce bg-amber-400 text-slate-950 text-xs font-bold px-3 py-1.5 rounded-xl shadow-lg border border-amber-300 flex items-center gap-1 group-hover:bg-amber-300 transition-colors">
                   <span className="absolute -left-1.5 top-1/2 -translate-y-1/2 w-3 h-3 bg-amber-400 group-hover:bg-amber-300 rotate-45 rounded-xs transition-colors"></span>
-                  <span className="relative z-10 whitespace-nowrap">Get Tech Support here</span>
+                  <span className="relative z-10 whitespace-nowrap">Get BrainBuddys Tech Support</span>
                 </div>
               </a>
             </div>
@@ -134,9 +151,10 @@ const Brett = () => {
             </p>
           </div>
 
-          {/* Anchor Tag linking directly to mybabb.com */}
           <a
             href="https://mybabb.com"
+            target="_blank"
+            rel="noopener noreferrer"
             className="whitespace-nowrap px-6 py-3 rounded-xl bg-slate-800 hover:bg-slate-700 border border-amber-400/30 text-amber-300 font-mono text-sm font-semibold transition-all hover:border-amber-400/60"
           >
             Go to mybabb.com →
@@ -145,8 +163,11 @@ const Brett = () => {
       </main>
 
       {/* Footer */}
-      <footer className="mt-16 text-center text-xs text-slate-500 border-t border-slate-800/60 pt-6 w-full max-w-4xl">
-        © {new Date().getFullYear()} Brain Buddy&apos;s Tech Support. All rights reserved.
+      <footer className="mt-16 text-center text-xs text-slate-500 border-t border-slate-800/60 pt-6 w-full max-w-4xl flex flex-col gap-2">
+        <p>© {new Date().getFullYear()} Brain Buddy&apos;s Tech Support (brainbuddys.com). All rights reserved.</p>
+        <p className="text-slate-600 text-[11px]">
+          Brain Buddy&apos;s Tech Support is founded and operated by Lead Web Developer Brett.
+        </p>
       </footer>
     </div>
   );

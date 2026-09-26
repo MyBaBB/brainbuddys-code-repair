@@ -1,13 +1,23 @@
-
-import "./Bruce.css"
-
-
- 
+import { useEffect } from "react";
 import { Link } from "react-router-dom";
-import BruceImg from "../../Images/BruceNerd-600x600-2.webp"; // Update image path if needed
+import "./Bruce.css";
+import BruceImg from "../../Images/BruceNerd-600x600-2.webp";
 import BlankBrain from "/BrainBuddy100px.png";
 
 const Bruce = () => {
+  // Dynamic SEO Document Metadata & Canonical Tag
+  useEffect(() => {
+    document.title = "Bruce | DevOps & Infrastructure Specialist | BrainBuddys";
+
+    let canonicalLink = document.querySelector("link[rel='canonical']");
+    if (!canonicalLink) {
+      canonicalLink = document.createElement("link");
+      canonicalLink.setAttribute("rel", "canonical");
+      document.head.appendChild(canonicalLink);
+    }
+    canonicalLink.setAttribute("href", "https://brainbuddys.com/bruce");
+  }, []);
+
   const skills = [
     "DevOps / CI/CD",
     "Cloud Infrastructure",
@@ -37,6 +47,8 @@ const Bruce = () => {
         {/* About Us button in the header */}
         <a
           href="https://about.us.mybabb.com"
+          target="_blank"
+          rel="noopener noreferrer"
           className="px-6 py-2 rounded-xl bg-amber-500 hover:bg-amber-400 text-slate-950 font-bold text-sm transition-all shadow-md active:scale-95"
         >
           About Us
@@ -55,7 +67,7 @@ const Bruce = () => {
             <div className="w-48 h-48 sm:w-56 sm:h-56 rounded-2xl overflow-hidden border-2 border-amber-400/40 shadow-xl transition-transform duration-300 group-hover:scale-[1.02]">
               <img
                 src={BruceImg}
-                alt="Bruce - Infrastructure & DevOps Engineer"
+                alt="Bruce - Infrastructure & DevOps Specialist at BrainBuddy Tech Support"
                 className="w-full h-full object-cover"
               />
             </div>
@@ -70,27 +82,30 @@ const Bruce = () => {
           {/* Profile Bio */}
           <div className="flex flex-col text-center md:text-left gap-3">
             <span className="text-amber-400 font-mono text-sm tracking-widest uppercase font-semibold">
-              Infrastructure & DevOps Engineer
+              Infrastructure &amp; DevOps Specialist
             </span>
             <h1 className="text-3xl sm:text-5xl font-extrabold text-white tracking-tight">
               Bruce
             </h1>
             <p className="text-slate-300 text-sm sm:text-base leading-relaxed mt-1">
-              Managing deployment pipelines, server reliability, and infrastructure automation. 
-              Ensuring 99.9% system uptime, zero-downtime deployments, and robust security protocols.
+              DevOps specialist for BrainBuddy Tech Support (BrainBuddys / MyBABB). 
+              Overseeing automated CI/CD deployment pipelines, server reliability, zero-downtime 
+              infrastructure, and network security protocols.
             </p>
 
             {/* Brain Buddy Logo + Animated Pop-up Badge */}
             <div className="flex items-center justify-center md:justify-start mt-4">
               <a
                 href="https://mybabb.com/techsupportpage"
-                aria-label="Get Brain Buddy Tech Support"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="Get Brain Buddy Tech Support and Infrastructure Solutions"
                 className="group flex items-center gap-3 hover:opacity-95 transition-opacity focus-visible:outline focus-visible:outline-2 focus-visible:outline-amber-400 rounded-xl"
               >
                 <div className="p-1 bg-slate-900/60 border border-slate-800 rounded-lg shrink-0 group-hover:border-amber-400/50 transition-colors">
                   <img
                     src={BlankBrain}
-                    alt="Brain Buddy Logo"
+                    alt="BrainBuddy Tech Support Logo"
                     className="w-14 h-14 object-contain opacity-90"
                   />
                 </div>
@@ -139,6 +154,8 @@ const Bruce = () => {
 
           <a
             href="https://mybabb.com"
+            target="_blank"
+            rel="noopener noreferrer"
             className="whitespace-nowrap px-6 py-3 rounded-xl bg-slate-800 hover:bg-slate-700 border border-amber-400/30 text-amber-300 font-mono text-sm font-semibold transition-all hover:border-amber-400/60"
           >
             Go to mybabb.com →
@@ -147,8 +164,11 @@ const Bruce = () => {
       </main>
 
       {/* Footer */}
-      <footer className="mt-16 text-center text-xs text-slate-500 border-t border-slate-800/60 pt-6 w-full max-w-4xl">
-        © {new Date().getFullYear()} Brain Buddy&apos;s Tech Support. All rights reserved.
+      <footer className="mt-16 text-center text-xs text-slate-500 border-t border-slate-800/60 pt-6 w-full max-w-4xl flex flex-col gap-2">
+        <p>© {new Date().getFullYear()} Brain Buddy&apos;s Tech Support (brainbuddys.com). All rights reserved.</p>
+        <p className="text-slate-600 text-[11px]">
+          Bruce is an AI persona managed by Brett, Founder and Lead Developer of Brain Buddy&apos;s Tech Support.
+        </p>
       </footer>
     </div>
   );

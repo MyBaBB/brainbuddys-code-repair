@@ -1,9 +1,23 @@
- 
+import { useEffect } from "react";
 import { Link } from "react-router-dom";
 import TurquoiseCross from "../../Images/TurquoiseCross-600x600.webp";
 import BlankBrain from "/BrainBuddy100px.png";
 
 const Blair = () => {
+  // Update document title and canonical tag for page-level SEO indexing
+  useEffect(() => {
+    document.title = "Blair | Digital Illustration & Media Creation | BrainBuddys";
+
+    // Manage canonical URL
+    let canonicalLink = document.querySelector("link[rel='canonical']");
+    if (!canonicalLink) {
+      canonicalLink = document.createElement("link");
+      canonicalLink.setAttribute("rel", "canonical");
+      document.head.appendChild(canonicalLink);
+    }
+    canonicalLink.setAttribute("href", "https://brainbuddys.com/blair");
+  }, []);
+
   const skills = [
     "Digital Illustration",
     "Video Creation & Editing",
@@ -33,6 +47,8 @@ const Blair = () => {
         {/* About Us button in the header */}
         <a
           href="https://about.us.mybabb.com"
+          target="_blank"
+          rel="noopener noreferrer"
           className="px-6 py-2 rounded-xl bg-amber-500 hover:bg-amber-400 text-slate-950 font-bold text-sm transition-all shadow-md active:scale-95"
         >
           About Us
@@ -51,7 +67,7 @@ const Blair = () => {
             <div className="w-48 h-48 sm:w-56 sm:h-56 rounded-2xl overflow-hidden border-2 border-amber-400/40 shadow-xl transition-transform duration-300 group-hover:scale-[1.02]">
               <img
                 src={TurquoiseCross}
-                alt="Blair - Digital Artist & Media Creator"
+                alt="Blair - Digital Artist & Media Creator at BrainBuddy Tech Support"
                 className="w-full h-full object-cover"
               />
             </div>
@@ -66,26 +82,28 @@ const Blair = () => {
           {/* Profile Bio */}
           <div className="flex flex-col text-center md:text-left gap-3">
             <span className="text-amber-400 font-mono text-sm tracking-widest uppercase font-semibold">
-              Digital Artist & Creative Media Specialist
+              Digital Artist &amp; Creative Media Specialist
             </span>
             <h1 className="text-3xl sm:text-5xl font-extrabold text-white tracking-tight">
               Blair
             </h1>
             <p className="text-slate-300 text-sm sm:text-base leading-relaxed mt-1">
-              Crafting engaging visual content—from original digital illustration and social media graphics to video editing, motion assets, and creative design systems that make brands pop.
+              Crafting engaging visual content for BrainBuddy&apos;s Web Development Services—from original digital illustration and social media graphics to video editing, motion assets, and creative design systems that make brands pop.
             </p>
 
             {/* Brain Buddy Logo + Animated Pop-up Badge */}
             <div className="flex items-center justify-center md:justify-start mt-4">
               <a
                 href="https://mybabb.com/techsupportpage"
-                aria-label="Get Brain Buddy Tech Support"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="Get BrainBuddy Tech Support & Code Repair"
                 className="group flex items-center gap-3 hover:opacity-95 transition-opacity focus-visible:outline focus-visible:outline-2 focus-visible:outline-amber-400 rounded-xl"
               >
                 <div className="p-1 bg-slate-900/60 border border-slate-800 rounded-lg shrink-0 group-hover:border-amber-400/50 transition-colors">
                   <img
                     src={BlankBrain}
-                    alt="Brain Buddy Logo"
+                    alt="BrainBuddy Tech Support Logo"
                     className="w-14 h-14 object-contain opacity-90"
                   />
                 </div>
@@ -93,7 +111,7 @@ const Blair = () => {
                 {/* Pop-up Tooltip Badge inside the link */}
                 <div className="relative animate-bounce bg-amber-400 text-slate-950 text-xs font-bold px-3 py-1.5 rounded-xl shadow-lg border border-amber-300 flex items-center gap-1 group-hover:bg-amber-300 transition-colors">
                   <span className="absolute -left-1.5 top-1/2 -translate-y-1/2 w-3 h-3 bg-amber-400 group-hover:bg-amber-300 rotate-45 rounded-xs transition-colors"></span>
-                  <span className="relative z-10 whitespace-nowrap">Get Tech Support here</span>
+                  <span className="relative z-10 whitespace-nowrap">Get BrainBuddys Tech Support</span>
                 </div>
               </a>
             </div>
@@ -104,7 +122,7 @@ const Blair = () => {
         <section id="skills" className="flex flex-col gap-6">
           <h2 className="text-xl font-bold text-slate-200 flex items-center gap-3">
             <span className="w-2 h-6 bg-amber-400 rounded-full"></span>
-            Artistic & Media Production Expertise
+            Artistic &amp; Media Production Expertise
           </h2>
 
           <div className="grid grid-cols-2 sm:grid-cols-4 gap-4">
@@ -134,6 +152,8 @@ const Blair = () => {
 
           <a
             href="https://mybabb.com"
+            target="_blank"
+            rel="noopener noreferrer"
             className="whitespace-nowrap px-6 py-3 rounded-xl bg-slate-800 hover:bg-slate-700 border border-amber-400/30 text-amber-300 font-mono text-sm font-semibold transition-all hover:border-amber-400/60"
           >
             Go to mybabb.com →
@@ -142,8 +162,11 @@ const Blair = () => {
       </main>
 
       {/* Footer */}
-      <footer className="mt-16 text-center text-xs text-slate-500 border-t border-slate-800/60 pt-6 w-full max-w-4xl">
-        © {new Date().getFullYear()} Brain Buddy&apos;s Tech Support. All rights reserved.
+      <footer className="mt-16 text-center text-xs text-slate-500 border-t border-slate-800/60 pt-6 w-full max-w-4xl flex flex-col gap-2">
+        <p>© {new Date().getFullYear()} Brain Buddy&apos;s Tech Support (brainbuddys.com). All rights reserved.</p>
+        <p className="text-slate-600 text-[11px]">
+          Brain Buddy&apos;s Tech Support is operated by Lead Developer Brett. Blair is a stylized brand persona representing digital art and media creation workflows.
+        </p>
       </footer>
     </div>
   );

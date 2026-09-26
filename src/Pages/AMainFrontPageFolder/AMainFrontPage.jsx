@@ -16,16 +16,16 @@ const TEAM_MEMBERS = [
     roleIndex: 0,
     image: MeArizona,
     priority: "high",
-    alt: "Brett - Lead Web Developer",
+    alt: "Brett - Founder & Lead Web Developer at BrainBuddy Tech Support",
     path: "/brett",
   },
-   {
+  {
     id: "blair",
     name: "Blair",
     roleIndex: 2,
     image: TurquoiseCross,
     priority: "lazy",
-    alt: "Blair - Technical Support Specialist",
+    alt: "Blair - Technical Support Specialist at BrainBuddy Tech Support",
     path: "/blair",
   },
   {
@@ -34,17 +34,16 @@ const TEAM_MEMBERS = [
     roleIndex: 1,
     image: Amber3,
     priority: "lazy",
-    alt: "Amber - Systems Consultant",
+    alt: "Amber - Systems & Solutions Consultant at BrainBuddy Tech Support",
     path: "/amber",
   },
- 
   {
     id: "bruce",
     name: "Bruce",
     roleIndex: 3,
     image: BruceNerd,
     priority: "lazy",
-    alt: "Bruce - Infrastructure Specialist",
+    alt: "Bruce - Infrastructure & DevOps Specialist at BrainBuddy Tech Support",
     path: "/bruce",
   },
 ];
@@ -68,6 +67,20 @@ const BrainBuddys = () => {
     generateInitialStatuses(TEAM_MEMBERS.length)
   );
 
+  // Dynamic SEO Document Metadata & Canonical Tag Setup
+  useEffect(() => {
+    document.title = "BrainBuddy's Tech Support | Web Development & Technical Solutions";
+
+    let canonicalLink = document.querySelector("link[rel='canonical']");
+    if (!canonicalLink) {
+      canonicalLink = document.createElement("link");
+      canonicalLink.setAttribute("rel", "canonical");
+      document.head.appendChild(canonicalLink);
+    }
+    canonicalLink.setAttribute("href", "https://brainbuddys.com/amainfrontpage");
+  }, []);
+
+  // Live status switching interval
   useEffect(() => {
     const timer = setTimeout(() => {
       setMemberStatuses((prevStatuses) => {
@@ -108,23 +121,22 @@ const BrainBuddys = () => {
 
       {/* MAIN CONTENT */}
       <main className="relative flex w-full flex-col items-center px-4 pb-20">
-        {/* Logo Link */}
-        <div
+        {/* Top Home Logo Link */}
+        <Link
           to="/amainfrontpage"
-          className="absolute left-4 top-4 z-20 h-[100px] w-[100px] rounded-lg focus-visible:outline focus-visible:outline-2 focus-visible:outline-amber-400  "
+          className="absolute left-4 top-4 z-20 h-[100px] w-[100px] rounded-lg focus-visible:outline focus-visible:outline-2 focus-visible:outline-amber-400"
           aria-label="Brain Buddy Tech Support Home Page"
         >
           <img
             src={BlankBrain}
-            alt=""
-            aria-hidden="true"
+            alt="BrainBuddy Tech Support Logo"
             width="100"
             height="100"
             loading="eager"
             decoding="async"
             className="brainBuddyIcon h-full w-full object-contain"
           />
-        </div>
+        </Link>
 
         {/* Hero Title Section */}
         <section className="relative z-10 mx-auto mt-24 flex w-full max-w-xl flex-col items-center justify-center sm:mt-[2.25rem]" aria-labelledby="hero-heading">
@@ -141,9 +153,9 @@ const BrainBuddys = () => {
             </header>
 
             <p className="sr-only text-xs">
-              Brain Buddy&apos;s is your trusted technical support hub, providing
-              expert assistance in web development, troubleshooting, and
-              optimization.
+              Brain Buddy&apos;s (BrainBuddies) is your full-service technical support and web development hub. 
+              Led by Founder &amp; Lead Web Developer Brett, we specialize in React code repair, custom web app design, 
+              and full-stack technical solutions.
             </p>
           </article>
         </section>
@@ -160,7 +172,7 @@ const BrainBuddys = () => {
                   key={member.id}
                   to={member.path}
                   className="group rounded-xl transition-transform focus-visible:outline focus-visible:outline-2 focus-visible:outline-amber-400"
-                  aria-label={`Connect with ${member.name} (Status: ${statusText})`}
+                  aria-label={`Connect with ${member.name} (${member.alt}) - Current Status: ${statusText}`}
                 >
                   <div className="imageCardContainer relative">
                     <div className={`statusBadge ${isAvailable ? "badgeAvailable" : "badgeUnavailable"}`}>
