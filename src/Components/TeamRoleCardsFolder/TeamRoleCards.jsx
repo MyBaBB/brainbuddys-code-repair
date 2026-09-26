@@ -1,4 +1,6 @@
 import { useState } from "react";
+import { LiaInfoSolid } from "react-icons/lia";
+import { TfiHeadphoneAlt } from "react-icons/tfi";
 import "./TeamRoleCards.css";
 
 export const teamRoles = [
@@ -62,21 +64,40 @@ export const RoleCardOverlay = ({ roleIndex }) => {
 
   if (!role) return null;
 
+  // Blocks event from reaching the outer parent <a> tag
+  const stopAnchorNavigation = (e) => {
+    e.preventDefault();
+    e.stopPropagation();
+  };
+
+  const handleToggle = (e) => {
+    stopAnchorNavigation(e);
+    setIsOpen((prev) => !prev);
+  };
+
   return (
     <div className={`roleCardOverlayContainer ${isOpen ? "is-open" : ""}`}>
-      {/* Title Bar - Shows title when closed, title2 when open */}
+      {/* Top-Left Headphone Icon Badge */}
+      <div className="cardTopLeftBadge">
+        <TfiHeadphoneAlt size={22}   />
+      </div>
+
+      {/* Bottom-Right Info Icon Badge */}
+      <div className="cardInfoIconBadge">
+        <LiaInfoSolid size={26}   />
+      </div>
+
+      {/* Title Bar */}
       <div className="roleTitleBar">
         <h3 className="roleTitle">
           <span className="titleClosed">{role.title}</span>
           <span className="titleOpen">{role.title2 || role.title}</span>
         </h3>
         <button
-          onClick={(e) => {
-            e.preventDefault();
-            e.stopPropagation();
-            setIsOpen(!isOpen);
-          }}
-          className="roleToggleButton"
+          type="button"
+          onClick={handleToggle}
+          onMouseDown={stopAnchorNavigation}
+          className="roleToggleButton z-50"
           aria-expanded={isOpen}
           aria-label={`Toggle description for ${role.title}`}
         >
@@ -84,22 +105,21 @@ export const RoleCardOverlay = ({ roleIndex }) => {
         </button>
       </div>
 
-      {/* Accordion Content with Landing Bounce */}
+      {/* Accordion Content Box */}
       <div
         className="roleAccordionBounce"
-        onClick={(e) => {
-          e.preventDefault();
-          e.stopPropagation();
-        }}
+        onClick={stopAnchorNavigation}
+        onMouseDown={stopAnchorNavigation}
       >
         <div className="accordionHeader">
           <span className="accordionTitle">{role.title2 || role.title}</span>
           <button
+            type="button"
             onClick={(e) => {
-              e.preventDefault();
-              e.stopPropagation();
+              stopAnchorNavigation(e);
               setIsOpen(false);
             }}
+            onMouseDown={stopAnchorNavigation}
             className="accordionCloseBtn"
           >
             ✕

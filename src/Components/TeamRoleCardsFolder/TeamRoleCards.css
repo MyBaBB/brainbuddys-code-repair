@@ -158,6 +158,20 @@
 /* ===================================================
    RESPONSIVE HOVER / CLICK BEHAVIOR
    =================================================== */
+/* Ensure buttons and open accordion receive direct clicks over the background image link */
+.roleToggleButton,
+.accordionCloseBtn {
+  position: relative;
+  z-index: 100;
+  pointer-events: auto !important;
+}
+
+.roleAccordionBounce {
+  pointer-events: auto !important;
+  z-index: 90;
+}
+
+
 
 /* 1. Mobile (<= 900px): Button click toggles the modal, slate backdrop, and title2 */
 @media (max-width: 900px) {
@@ -209,3 +223,39 @@
     display: inline;
   }
 }
+/* Top-Left Headphone Icon Badge */
+.cardTopLeftBadge {
+  position: absolute;
+  top: 0.75rem;
+  left: 0.75rem;
+  z-index: 20;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(15, 23, 42, 0.65);
+  backdrop-filter: blur(6px);
+  padding: 0.35rem;
+  border-radius: 9999px;
+  color: rgb(15, 199, 86);
+  border: 1px solid rgba(33, 150, 243, 0.4);
+  pointer-events: none !important;
+}
+
+/* Bottom-Right Info Icon Badge (#2196F3) */
+.cardInfoIconBadge {
+  position: absolute;
+  bottom: 0.75rem;
+  right: 0.75rem;
+  z-index: 20;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(15, 23, 42, 0.65);
+  backdrop-filter: blur(6px);
+  padding: 0.35rem;
+  border-radius: 9999px;
+  border: 1px solid rgba(33, 150, 243, 0.4);
+  pointer-events: none !important;
+  color: #2196F3;
+}
+
