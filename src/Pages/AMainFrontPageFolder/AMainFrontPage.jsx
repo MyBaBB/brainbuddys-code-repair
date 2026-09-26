@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import "./AMainFrontPage.css";
-import BlankBrain from "/BrainBuddy100px.png";
+import  Catwoman from "../../Components/HackerBuddyFolder/HackerBuddy2.jsx"
 import MeArizona from "../../Images/MeArizona600x600.webp";
 import TurquoiseCross from "../../Images/TurquoiseCross-600x600.webp";
 import BruceNerd from "../../Images/BruceNerd-600x600-2.webp";
@@ -121,22 +121,8 @@ const BrainBuddys = () => {
 
       {/* MAIN CONTENT */}
       <main className="relative flex w-full flex-col items-center px-4 pb-20">
-        {/* Top Home Logo Link */}
-        <Link
-          to="/amainfrontpage"
-          className="absolute left-4 top-4 z-20 h-[100px] w-[100px] rounded-lg focus-visible:outline focus-visible:outline-2 focus-visible:outline-amber-400"
-          aria-label="Brain Buddy Tech Support Home Page"
-        >
-          <img
-            src={BlankBrain}
-            alt="BrainBuddy Tech Support Logo"
-            width="100"
-            height="100"
-            loading="eager"
-            decoding="async"
-            className="brainBuddyIcon h-full w-full object-contain"
-          />
-        </Link>
+       
+      
 
         {/* Hero Title Section */}
         <section className="relative z-10 mx-auto mt-24 flex w-full max-w-xl flex-col items-center justify-center sm:mt-[2.25rem]" aria-labelledby="hero-heading">
@@ -192,8 +178,11 @@ const BrainBuddys = () => {
                       className="representativeImage"
                     />
                     <RoleCardOverlay roleIndex={member.roleIndex} />
+
                   </div>
+               
                 </Link>
+                
               );
             })}
           </div>
@@ -202,8 +191,19 @@ const BrainBuddys = () => {
         <div className="mt-12 flex w-full justify-center">
           <ContactMe />
         </div>
-      </main>
 
+     <a
+          className="absolute left-50 -translate-x-50 bottom-[3.5rem] z-20 h-[100px] w-[100px] rounded-lg focus-visible:outline focus-visible:outline-2 focus-visible:outline-amber-400"
+          aria-label="Brain Buddy Tech Support Home Page"
+        >
+          < Catwoman />
+        </a>
+
+
+
+
+      </main>
+        
       {/* RIGHT SIDEBAR */}
       <aside className="hidden border-l border-gray-200/20 bg-slate-50/10 p-4 min-[900px]:block" aria-hidden="true"></aside>
     </div>

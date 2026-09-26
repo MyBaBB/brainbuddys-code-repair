@@ -1,0 +1,54 @@
+.hackerBuddyButtonHide,
+.homeAppear {
+  visibility: hidden;
+  animation: showButton 3s ease-in-out 3s forwards;
+}
+.hackerBuddyBottom {
+  visibility: hidden;
+  animation: showButton 3s ease-in-out 3s forwards;
+}
+@keyframes showButton {
+  to {
+    visibility: visible;
+  }
+}
+@media screen and (max-width: 827px) {
+  .hackerBuddyButtonHide, .lightningBolt {
+   display: none;
+  }
+}
+@media screen and (min-width: 827px) {
+  .hackerBuddyBottom, .lightningBolt {
+   display: none;
+  }
+}
+.dataToolTip81:hover::before,
+.dataToolTip81:hover::after {
+  --scale: 1;
+}
+.dataToolTip81::before {
+  transform: translateX(-50%) scale(var(--scale));
+  transform-origin: top center;
+  transition: ease-in 0.25s;
+  bottom: -2.8rem;
+  left: 50%;
+  
+  --scale: 0;
+  z-index: 3;
+}
+
+ 
+.dataToolTipStyles:before {
+  background: radial-gradient(#1e4571, #1d8164);
+  color: white;
+  border: 1px solid skyblue;
+  font-weight: Bold;
+  border-radius: 10px;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  padding-left: 2rem;
+  padding-right: 2rem;
+  width: max-content;
+  position: absolute;
+  content: attr(data-tool-tip);
+}
