@@ -20,10 +20,10 @@ export const teamRoles = [
   {
     id: 2,
     title: "Amber",
-    title2: "Interface Designer",
+    title2: "Head of Experience Design",
     bullets: [
       "Creates clean, intuitive UI layouts and user flows",
-      "Designs wireframes, mockups, and interactive prototypes",
+      "Designs wire-frames, mockups, and interactive prototypes",
       "Ensures visual consistency across all pages and components",
       "Collaborates with developers for accurate implementation",
       "Optimizes interfaces for mobile, tablet, and desktop",
@@ -33,7 +33,7 @@ export const teamRoles = [
   {
     id: 3,
     title: "Blair",
-    title2: "Digital Media Artist",
+    title2: "Media Artist Producer",
     bullets: [
       "Designs custom graphics, icons, and visual assets",
       "Produces video content, motion graphics, and animations",
@@ -46,7 +46,7 @@ export const teamRoles = [
   {
     id: 4,
     title: "Bruce",
-    title2: "SEO & Domain Strategist",
+    title2: "Lead - SEO & Domain Strategist ",
     bullets: [
       "Manages domains, DNS, SSL, and hosting‑related SEO factors",
       "Optimizes site structure for search visibility and ranking",
