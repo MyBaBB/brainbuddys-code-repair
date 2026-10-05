@@ -6,98 +6,10 @@
   scroll-behavior: smooth;
 }
 
-@font-face {
-  font-family: "Archivo_Black";
-  src: url(../GoogleFonts/ArchivoBlack-Regular.ttf);
-}
-@font-face {
-  font-family: "Aclonica-Regular";
-  src: url(../GoogleFonts/Aclonica-Regular.ttf);
-}
-@font-face {
-  font-family: "ArchivoBlack-Regular";
-  src: url(../GoogleFonts/ArchivoBlack-Regular.ttf);
-}
+ 
+ 
 
-@font-face {
-  font-family: "Bronco-Bandit";
-  src: url(../GoogleFonts/Bronco-Bandit.ttf);
-}
 
-@font-face {
-  font-family: "Blackbeard-ld7V";
-  src: url(../GoogleFonts/Blackbeard-ld7V.ttf);
-}
-
-@font-face {
-  font-family: "BlackOpsOne-Regular";
-  src: url(../GoogleFonts/BlackOpsOne-Regular.ttf);
-}
-@font-face {
-  font-family: "Borel-Regular";
-  src: url(../GoogleFonts/Borel-Regular.ttf);
-}
-@font-face {
-  font-family: "Caprasimo-Regular";
-  src: url(../GoogleFonts/Caprasimo-Regular.ttf);
-}
-@font-face {
-  font-family: "Changa-Regular";
-  src: url(../GoogleFonts/Changa-Regular.ttf);
-}
-@font-face {
-  font-family: "Changa-VariableFont_wght";
-  src: url(../GoogleFonts/Changa-VariableFont_wght.ttf);
-}
-@font-face {
-  font-family: "ChunkFive-Regular";
-  src: url(../GoogleFonts/ChunkFive-Regular.otf);
-}
-
-@font-face {
-  font-family: "Creepster-Regular";
-  src: url(../GoogleFonts/Creepster-Regular.ttf);
-}
-@font-face {
-  font-family: "CYRON_Metallic-SVG-OTF";
-  src: url(../GoogleFonts/CYRON_Metallic-SVG-OTF.otf);
-}
-
-@font-face {
-  font-family: "CYRON_Metallic-SVG-TTF";
-  src: url(../GoogleFonts/CYRON_Metallic-SVG-TTF.ttf);
-}
-
-@font-face {
-  font-family: "CYRON_Metallic-SVG-Woff2";
-  src: url(../GoogleFonts/CYRON_Metallic-SVG-Woff2.woff2);
-}
-
-@font-face {
-  font-family: "DMSerifDisplay-Italic";
-  src: url(../GoogleFonts/DMSerifDisplay-Italic.ttf);
-}
-
-@font-face {
-  font-family: "DM_Serif_Display";
-  src: url(../GoogleFonts/DMSerifDisplay-Regular.ttf);
-}
-@font-face {
-  font-family: "EmilysCandy-Regular";
-  src: url(../GoogleFonts/EmilysCandy-Regular.ttf);
-}
-@font-face {
-  font-family: "Iceberg-Regular";
-  src: url(../GoogleFonts/Iceberg-Regular.ttf);
-}
-@font-face {
-  font-family: "Gevenda-Regular";
-  src: url(../GoogleFonts/Gevenda-Regular.ttf);
-}
-@font-face {
-  font-family: "HoltwoodOneSC-Regular";
-  src: url(../GoogleFonts/HoltwoodOneSC-Regular.ttf);
-}
 
 @font-face {
   font-family: "Itim-Regular";
