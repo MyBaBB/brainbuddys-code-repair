@@ -25,8 +25,8 @@ export const teamRoles = [
     title2: "Head of Experience Design",
     path: "/amber",
     bullets: [
-      "Creates clean, intuitive UI layouts and user flows",
       "Designs wire-frames, mockups, and interactive prototypes",
+      "Loves taking a complex problem and working it until it yields",
       "Ensures visual consistency across all pages and components",
       "Collaborates with developers for accurate implementation",
       "Optimizes interfaces for mobile, tablet, and desktop",
