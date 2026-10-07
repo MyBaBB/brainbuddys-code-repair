@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { useNavigate } from "react-router-dom";
 import { LiaInfoSolid } from "react-icons/lia";
 import { TfiHeadphoneAlt } from "react-icons/tfi";
 import "./TeamRoleCards.css";
@@ -8,6 +9,7 @@ export const teamRoles = [
     id: 1,
     title: "Brett",
     title2: "Chief Web Architect",
+    path: "/brett",
     bullets: [
       "Oversees full system architecture and project direction",
       "Designs scalable structures for React, Vite, Tailwind, and backend integrations",
@@ -21,9 +23,10 @@ export const teamRoles = [
     id: 2,
     title: "Amber",
     title2: "Head of Experience Design",
+    path: "/amber",
     bullets: [
-      "Creates clean, intuitive UI layouts and user flows",
       "Designs wire-frames, mockups, and interactive prototypes",
+      "Loves taking a complex problem and working it until it yields",
       "Ensures visual consistency across all pages and components",
       "Collaborates with developers for accurate implementation",
       "Optimizes interfaces for mobile, tablet, and desktop",
@@ -31,22 +34,24 @@ export const teamRoles = [
     ],
   },
   {
-    id: 3,
-    title: "Blair",
-    title2: "Media Artist Producer",
-    bullets: [
-      "Designs custom graphics, icons, and visual assets",
-      "Produces video content, motion graphics, and animations",
-      "Enhances brand identity through visual storytelling",
-      "Edits and optimizes media for web performance",
-      "Collaborates with UI/UX to match the site’s aesthetic",
-      "Creates promotional visuals, thumbnails, and short‑form videos",
+   id: 3,
+  title: "Blair",
+  title2: "The Visual Boss",
+  path: "/blair",
+  bullets: [
+    "Oversees all visual direction, brand identity, and media production",
+    "Designs custom graphics, motion assets, and high-impact visuals",
+    "Produces video content, promo reels, and digital storytelling",
+    "Enhances aesthetic flow across web, social, and product platforms",
+    "Collaborates with UI/UX to ensure seamless brand consistency",
+    "Maintains high-definition creative standards across all media builds",
     ],
   },
   {
     id: 4,
     title: "Bruce",
-    title2: "Lead - SEO & Domain Strategist ",
+    title2: "Lead - SEO & Domain Strategist",
+    path: "/bruce",
     bullets: [
       "Manages domains, DNS, SSL, and hosting‑related SEO factors",
       "Optimizes site structure for search visibility and ranking",
@@ -60,11 +65,12 @@ export const teamRoles = [
 
 export const RoleCardOverlay = ({ roleIndex }) => {
   const [isOpen, setIsOpen] = useState(false);
+  const navigate = useNavigate();
   const role = teamRoles[roleIndex];
 
   if (!role) return null;
 
-  // Blocks event from reaching the outer parent <a> tag
+  // Blocks toggle / close events from propagating
   const stopAnchorNavigation = (e) => {
     e.preventDefault();
     e.stopPropagation();
@@ -75,20 +81,32 @@ export const RoleCardOverlay = ({ roleIndex }) => {
     setIsOpen((prev) => !prev);
   };
 
+  // Navigates to the team member's page when clicking the open modal/accordion
+  const handleCardClick = (e) => {
+    e.stopPropagation();
+    if (role.path) {
+      navigate(role.path);
+    }
+  };
+
   return (
     <div className={`roleCardOverlayContainer ${isOpen ? "is-open" : ""}`}>
       {/* Top-Left Headphone Icon Badge */}
       <div className="cardTopLeftBadge">
-        <TfiHeadphoneAlt size={22}   />
+        <TfiHeadphoneAlt size={22} />
       </div>
 
       {/* Bottom-Right Info Icon Badge */}
       <div className="cardInfoIconBadge">
-        <LiaInfoSolid size={26}   />
+        <LiaInfoSolid size={26} />
       </div>
 
       {/* Title Bar */}
-      <div className="roleTitleBar">
+      <div 
+        className="roleTitleBar"
+        onClick={isOpen ? handleCardClick : undefined}
+        style={{ cursor: isOpen ? "pointer" : "default" }}
+      >
         <h3 className="roleTitle">
           <span className="titleClosed">{role.title}</span>
           <span className="titleOpen">{role.title2 || role.title}</span>
@@ -105,11 +123,10 @@ export const RoleCardOverlay = ({ roleIndex }) => {
         </button>
       </div>
 
-      {/* Accordion Content Box */}
+      {/* Accordion Content Box - Clickable when open */}
       <div
-        className="roleAccordionBounce"
-        onClick={stopAnchorNavigation}
-        onMouseDown={stopAnchorNavigation}
+        className="roleAccordionBounce cursor-pointer"
+        onClick={handleCardClick}
       >
         <div className="accordionHeader">
           <span className="accordionTitle">{role.title2 || role.title}</span>
@@ -121,6 +138,7 @@ export const RoleCardOverlay = ({ roleIndex }) => {
             }}
             onMouseDown={stopAnchorNavigation}
             className="accordionCloseBtn"
+            aria-label="Close details"
           >
             ✕
           </button>

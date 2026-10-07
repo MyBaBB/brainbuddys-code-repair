@@ -113,7 +113,7 @@ const Amber = () => {
                 {/* Pop-up Tooltip Badge inside the link */}
                 <div className="relative animate-bounce bg-amber-400 text-slate-950 text-xs font-bold px-3 py-1.5 rounded-xl shadow-lg border border-amber-300 flex items-center gap-1 group-hover:bg-amber-300 transition-colors">
                   <span className="absolute -left-1.5 top-1/2 -translate-y-1/2 w-3 h-3 bg-amber-400 group-hover:bg-amber-300 rotate-45 rounded-xs transition-colors"></span>
-                  <span className="relative z-10 whitespace-nowrap">Get BrainBuddys Tech Support</span>
+                  <span className="relative z-10 whitespace-nowrap">Get BrainBuddy&apos;s Tech Support</span>
                 </div>
               </a>
             </div>
