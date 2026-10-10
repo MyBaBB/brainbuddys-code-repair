@@ -1,9 +1,9 @@
-import FrontPage from "./AMainFrontPageFolder/AMainFrontPage";
+import HomePage from "./AMainFrontPageFolder/HomePage.jsx";
 
 function App() {
   return (
     <div>
-      <FrontPage />
+      <HomePage />
     </div>
   );
 }
