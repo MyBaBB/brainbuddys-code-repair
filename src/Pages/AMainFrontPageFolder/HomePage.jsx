@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
-import "./AMainFrontPage.css";
-import  Catwoman from "../../Components/HackerBuddyFolder/HackerBuddy2.jsx"
+import "./HomePage.css";
+import Catwoman from "../../Components/HackerBuddyFolder/HackerBuddy2.jsx";
 import MeArizona from "../../Images/MeArizona600x600.webp";
 import TurquoiseCross from "../../Images/TurquoiseCross-600x600.webp";
 import BruceNerd from "../../Images/BruceNerd-600x600-2.webp";
@@ -16,7 +16,7 @@ const TEAM_MEMBERS = [
     roleIndex: 0,
     image: MeArizona,
     priority: "high",
-    alt: "Brett - Founder & Lead Web Developer at BrainBuddy Tech Support",
+    alt: "Brett - Founder & Lead Web Developer at BrainBuddys",
     path: "/brett",
   },
   {
@@ -25,7 +25,7 @@ const TEAM_MEMBERS = [
     roleIndex: 2,
     image: TurquoiseCross,
     priority: "lazy",
-    alt: "Blair - Technical Support Specialist at BrainBuddy Tech Support",
+    alt: "Blair - Technical Support Specialist at BrainBuddys",
     path: "/blair",
   },
   {
@@ -34,7 +34,7 @@ const TEAM_MEMBERS = [
     roleIndex: 1,
     image: Amber3,
     priority: "lazy",
-    alt: "Amber - Systems & Solutions Consultant at BrainBuddy Tech Support",
+    alt: "Amber - Systems & Solutions Consultant at BrainBuddys",
     path: "/amber",
   },
   {
@@ -43,7 +43,7 @@ const TEAM_MEMBERS = [
     roleIndex: 3,
     image: BruceNerd,
     priority: "lazy",
-    alt: "Bruce - Infrastructure & DevOps Specialist at BrainBuddy Tech Support",
+    alt: "Bruce - Infrastructure & DevOps Specialist at BrainBuddys",
     path: "/bruce",
   },
 ];
@@ -69,7 +69,7 @@ const BrainBuddys = () => {
 
   // Dynamic SEO Document Metadata & Canonical Tag Setup
   useEffect(() => {
-    document.title = "BrainBuddy's Tech Support | Web Development & Technical Solutions";
+    document.title = "BrainBuddys | Brain Buddy's Tech Support & Code Repair";
 
     let canonicalLink = document.querySelector("link[rel='canonical']");
     if (!canonicalLink) {
@@ -77,7 +77,7 @@ const BrainBuddys = () => {
       canonicalLink.setAttribute("rel", "canonical");
       document.head.appendChild(canonicalLink);
     }
-    canonicalLink.setAttribute("href", "https://brainbuddys.com/amainfrontpage");
+    canonicalLink.setAttribute("href", "https://brainbuddys.com/");
   }, []);
 
   // Live status switching interval
@@ -121,27 +121,48 @@ const BrainBuddys = () => {
 
       {/* MAIN CONTENT */}
       <main className="relative flex w-full flex-col items-center px-4 pb-20">
-       
-      
-
         {/* Hero Title Section */}
         <section className="relative z-10 mx-auto mt-24 flex w-full max-w-xl flex-col items-center justify-center sm:mt-[2.25rem]" aria-labelledby="hero-heading">
           <article className="flex w-full flex-col items-center">
-            <header className="brainBuddysTitleBox relative z-10 flex h-fit w-full flex-col items-center p-2 text-center">
-              <h1 id="hero-heading" className="BrainBuddysH1 z-10 rounded-xl bg-[#33626e] bg-opacity-90 p-2 px-4 font-PTSerif-Bold text-xl sm:text-4xl">
-                <span className="whitespace-nowrap text-amber-100">
-                  Brain&nbsp;Buddy&apos;s
-                </span>
-              </h1>
-              <p className="mt-4 text-xs font-medium text-amber-100 sm:text-2xl">
-                Brett&apos;s Web Development and Technical Support
-              </p>
-            </header>
+            <header className="brainBuddysTitleBox relative z-10 flex w-full max-w-2xl flex-col items-center overflow-hidden rounded-2xl border border-teal-500/30 bg-slate-900/85 p-6 text-center shadow-[0_0_30px_rgba(45,212,191,0.15)] backdrop-blur-md transition-all duration-300 hover:border-teal-400/50 hover:shadow-[0_0_40px_rgba(45,212,191,0.25)] sm:p-8">
+  
+  {/* Primary Entity H1 */}
+  <h1 id="hero-heading" className="relative z-10 my-1 font-PTSerif-Bold text-3xl font-extrabold tracking-tight text-slate-100 sm:text-5xl">
+    <span className="bg-gradient-to-r from-amber-100 via-teal-200 to-cyan-300 bg-clip-text text-transparent drop-shadow-sm">
+      BrainBuddys
+    </span>
+  </h1>
 
+  {/* Primary Descriptor Subheading H2 */}
+  <h2 className="mt-3 max-w-xl text-sm font-semibold tracking-wide text-amber-100/90 sm:text-xl sm:leading-relaxed">
+    Brain Buddy&apos;s Technical Support &amp; Web Development
+  </h2>
+
+  {/* DIYer Hero Pitch */}
+  <p className="mt-2 text-xs font-medium text-slate-300 sm:text-base">
+    Building it yourself and hit a wall? We step in to debug, fine-tune, and custom-code when AI tools &amp; builders fall short.
+  </p>
+
+  {/* Custom Tech Capabilities & WordPress Add-On Bar */}
+  <div className="mt-5 flex flex-wrap items-center justify-center gap-2 font-mono text-[11px] text-teal-300/90 sm:text-xs">
+    <span className="rounded-md border border-teal-500/20 bg-teal-950/50 px-2.5 py-1">
+      React &amp; Web Debugging
+    </span>
+    <span className="rounded-md border border-amber-500/20 bg-amber-950/40 px-2.5 py-1 text-amber-200/90">
+      WordPress Speed &amp; Performance
+    </span>
+    <span className="rounded-md border border-cyan-500/20 bg-cyan-950/50 px-2.5 py-1 text-cyan-200">
+      Custom High-Converting Landing Pages
+    </span>
+  </div>
+
+</header>
+
+            {/* Entity Mapping Screen-Reader Paragraph for Search Bots & Accessibility */}
             <p className="sr-only text-xs">
-              Brain Buddy&apos;s (BrainBuddies) is your full-service technical support and web development hub. 
-              Led by Founder &amp; Lead Web Developer Brett, we specialize in React code repair, custom web app design, 
-              and full-stack technical solutions.
+              Welcome to BrainBuddys (frequently searched as Brain Buddy, Brain Buddies, or Brain Buddy&apos;s). 
+              Led by Founder &amp; Lead Web Developer Brett, we specialize in React code repair, custom web application design, 
+              and full-stack technical support.
             </p>
           </article>
         </section>
@@ -178,11 +199,8 @@ const BrainBuddys = () => {
                       className="representativeImage"
                     />
                     <RoleCardOverlay roleIndex={member.roleIndex} />
-
                   </div>
-               
                 </Link>
-                
               );
             })}
           </div>
@@ -192,18 +210,14 @@ const BrainBuddys = () => {
           <ContactMe />
         </div>
 
-     <a
+        <a
           className="absolute left-50 -translate-x-50 bottom-[3.5rem] z-20 h-[100px] w-[100px] rounded-lg focus-visible:outline focus-visible:outline-2 focus-visible:outline-amber-400"
-          aria-label="Brain Buddy Tech Support Home Page"
+          aria-label="BrainBuddys Home Page"
         >
-          < Catwoman />
+          <Catwoman />
         </a>
-
-
-
-
       </main>
-        
+
       {/* RIGHT SIDEBAR */}
       <aside className="hidden border-l border-gray-200/20 bg-slate-50/10 p-4 min-[900px]:block" aria-hidden="true"></aside>
     </div>
