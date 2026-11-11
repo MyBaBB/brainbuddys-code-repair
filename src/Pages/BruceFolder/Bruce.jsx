@@ -9,7 +9,7 @@ import ReactFavicons from "../../Components/ReactFavicon";
 const Bruce = () => {
   // Dynamic SEO Document Metadata & Canonical Tag
   useEffect(() => {
-    document.title = "Bruce | DevOps & Infrastructure Specialist | Brain Buddy ";
+    document.title = "Bruce | DevOps | Brain Buddy ";
 
     let canonicalLink = document.querySelector("link[rel='canonical']");
     if (!canonicalLink) {

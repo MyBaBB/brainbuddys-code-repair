@@ -10,7 +10,7 @@ import ReactFavicons from "../../Components/ReactFavicon";
 const Amber = () => {
   // Update document title and canonical tag for page-level SEO indexing
   useEffect(() => {
-    document.title = "Amber | UI/UX Design & System Consulting | Brain Buddy";
+    document.title = "Amber | Designer | Brain Buddy";
     
     // Manage canonical URL
     let canonicalLink = document.querySelector("link[rel='canonical']");

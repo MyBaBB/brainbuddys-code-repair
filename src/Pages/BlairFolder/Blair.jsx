@@ -8,7 +8,7 @@ import ReactFavicons from "../../Components/ReactFavicon";
 const Blair = () => {
   // Update document title and canonical tag for page-level SEO indexing
   useEffect(() => {
-    document.title = "Blair | Digital Illustration & Media Creation | Brain Buddy";
+    document.title = "Blair | Visualist | Brain Buddy";
 
     // Manage canonical URL
     let canonicalLink = document.querySelector("link[rel='canonical']");
