@@ -69,7 +69,7 @@ const BrainBuddys = () => {
 
   // Dynamic SEO Document Metadata & Canonical Tag Setup
   useEffect(() => {
-    document.title = "BrainBuddys | Brain Buddy's Tech Support & Code Repair";
+    document.title = "Brain Buddy | Tech Support & Code Repair";
 
     let canonicalLink = document.querySelector("link[rel='canonical']");
     if (!canonicalLink) {
@@ -126,22 +126,28 @@ const BrainBuddys = () => {
           <article className="flex w-full flex-col items-center">
             <header className="brainBuddysTitleBox relative z-10 flex w-full max-w-2xl flex-col items-center overflow-hidden rounded-2xl border border-teal-500/30 bg-slate-900/85 p-6 text-center shadow-[0_0_30px_rgba(45,212,191,0.15)] backdrop-blur-md transition-all duration-300 hover:border-teal-400/50 hover:shadow-[0_0_40px_rgba(45,212,191,0.25)] sm:p-8">
   
-  {/* Primary Entity H1 */}
+
+
+{/* Primary Entity H1 */}
   <h1 id="hero-heading" className="relative z-10 my-1 font-PTSerif-Bold text-3xl font-extrabold tracking-tight text-slate-100 sm:text-5xl">
     <span className="bg-gradient-to-r from-amber-100 via-teal-200 to-cyan-300 bg-clip-text text-transparent drop-shadow-sm">
-      BrainBuddys
+      Brain Buddy
     </span>
+    
   </h1>
-
-  {/* Primary Descriptor Subheading H2 */}
-  <h2 className="mt-3 max-w-xl text-sm font-semibold tracking-wide text-amber-100/90 sm:text-xl sm:leading-relaxed">
-    Brain Buddy&apos;s Technical Support &amp; Web Development
-  </h2>
+<p className=" text-xs font-medium sm:text-base">
+        When AI builders don&apos;t get it.
+      </p>
+    
 
   {/* DIYer Hero Pitch */}
-  <p className="mt-2 text-xs font-medium text-slate-300 sm:text-base">
-    Building it yourself and hit a wall? We step in to debug, fine-tune, and custom-code when AI tools &amp; builders fall short.
-  </p>
+      
+      <p className=" text-xs font-medium sm:text-base">
+        Building it yourself and hit a wall?
+      </p>
+      <p className=" text-xs font-medium sm:text-base">
+        We help you to debug, fine-tune, and custom-code. 
+      </p>  
 
   {/* Custom Tech Capabilities & WordPress Add-On Bar */}
   <div className="mt-5 flex flex-wrap items-center justify-center gap-2 font-mono text-[11px] text-teal-300/90 sm:text-xs">
@@ -155,7 +161,10 @@ const BrainBuddys = () => {
       Custom High-Converting Landing Pages
     </span>
   </div>
-
+  {/* Primary Descriptor Subheading H2 */}
+   <h2 className="  max-w-xl mt-4 text-sm font-semibold tracking-wide text-amber-100/90 sm:text-xl sm:leading-relaxed">
+    Technical Support &amp; Web Development
+   </h2>
 </header>
 
             {/* Entity Mapping Screen-Reader Paragraph for Search Bots & Accessibility */}

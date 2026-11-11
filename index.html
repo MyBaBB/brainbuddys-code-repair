@@ -8,7 +8,7 @@
   <meta name="google-site-verification" content="0nm9pxZd_zFa1XsJB2Mi4msS95V46ShscaTZBFTmHXM" />
 
   <!-- Primary SEO Meta Tags -->
-  <title>BrainBuddys | Tech Support & Code Repair for AI Websites</title>
+  <title>Brain Buddy | Tech Support & Code Repair</title>
   <meta name="description" content="BrainBuddys (also known as Brain Buddy or Brain Buddies) provides expert web development, custom code repair, and React debugging for AI-generated websites." />
   <meta name="author" content="Brett - BrainBuddys" />
   <meta name="robots" content="index, follow, max-image-preview:large" />
@@ -17,10 +17,8 @@
   <link rel="canonical" href="https://brainbuddys.com/" />
 
   <!-- Favicons & Icon Preloading -->
-  <link rel="preload" href="/favicon11.png" as="image" />
-  <link rel="preload" href="/favicon22.png" as="image" />
-  <link rel="preload" href="/favicon33.png" as="image" />
-  <link id="favicon" rel="icon" href="/favicon11.png" type="image/x-icon" />
+ 
+  <link id="favicon" rel="icon" href="/favicon11.png" type="image/png" />
 
   <!-- Open Graph / Facebook / LinkedIn Protocol -->
   <meta property="og:type" content="website" />
@@ -77,24 +75,5 @@
   <div id="root"></div>
   <script type="module" src="/src/main.jsx"></script>
 
-  <!-- Favicon Animation Script -->
-  <script>
-    const favicons = ["/favicon11.png", "/favicon22.png", "/favicon33.png"];
-    let current = 0;
-
-    function flicker() {
-      const link = document.getElementById("favicon");
-      if (link) {
-        current = (current + 1) % favicons.length;
-        link.href = favicons[current];
-      }
-
-      // Random delay between 300ms and 3000ms
-      const delay = Math.floor(Math.random() * (3000 - 300 + 1)) + 300;
-      setTimeout(flicker, delay);
-    }
-
-    flicker();
-  </script>
 </body>
 </html>
