@@ -2,11 +2,12 @@ import { useEffect } from "react";
 import { Link } from "react-router-dom";
 import MeArizona from "../../Images/MeArizona600x600.webp";
 import BlankBrain from "/BrainBuddy100px.png";
+import ReactFavicons from "../../Components/ReactFavicon";
 
 const Brett = () => {
   // Dynamic SEO Document Metadata & Canonical Tag
   useEffect(() => {
-    document.title = "Brett | Lead Developer & Architect | BrainBuddys";
+    document.title = "Brett | Chief | Brain Buddy";
 
     let canonicalLink = document.querySelector("link[rel='canonical']");
     if (!canonicalLink) {
@@ -29,6 +30,8 @@ const Brett = () => {
   ];
 
   return (
+     <>
+      < ReactFavicons />
     <div className="min-h-screen bg-slate-950 text-slate-100 flex flex-col items-center px-4 py-8 relative">
       {/* Background Glow Overlay */}
       <div className="absolute top-0 left-1/2 -translate-x-1/2 w-full max-w-4xl h-96 bg-amber-500/10 blur-[120px] pointer-events-none rounded-full"></div>
@@ -170,6 +173,7 @@ const Brett = () => {
         </p>
       </footer>
     </div>
+    </>
   );
 };
 

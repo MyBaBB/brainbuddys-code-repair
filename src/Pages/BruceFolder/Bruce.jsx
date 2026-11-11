@@ -3,11 +3,13 @@ import { Link } from "react-router-dom";
 import "./Bruce.css";
 import BruceImg from "../../Images/BruceNerd-600x600-2.webp";
 import BlankBrain from "/BrainBuddy100px.png";
+import ReactFavicons from "../../Components/ReactFavicon";
+
 
 const Bruce = () => {
   // Dynamic SEO Document Metadata & Canonical Tag
   useEffect(() => {
-    document.title = "Bruce | DevOps & Infrastructure Specialist | BrainBuddys";
+    document.title = "Bruce | DevOps & Infrastructure Specialist | Brain Buddy ";
 
     let canonicalLink = document.querySelector("link[rel='canonical']");
     if (!canonicalLink) {
@@ -19,6 +21,7 @@ const Bruce = () => {
   }, []);
 
   const skills = [
+    "Technical Stuff",
     "DevOps / CI/CD",
     "Cloud Infrastructure",
     "System Operations",
@@ -26,10 +29,12 @@ const Bruce = () => {
     "Automation Scripts",
     "Performance Monitoring",
     "Disaster Recovery",
-    "Linux Administration",
+    
   ];
 
   return (
+   <>
+       < ReactFavicons />
     <div className="min-h-screen bg-slate-950 text-slate-100 flex flex-col items-center px-4 py-8 relative">
       {/* Background Glow Overlay */}
       <div className="absolute top-0 left-1/2 -translate-x-1/2 w-full max-w-4xl h-96 bg-amber-500/10 blur-[120px] pointer-events-none rounded-full"></div>
@@ -171,6 +176,7 @@ const Bruce = () => {
         </p>
       </footer>
     </div>
+    </>
   );
 };
 

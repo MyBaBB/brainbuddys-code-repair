@@ -3,11 +3,14 @@ import "./Amber.css";
 import { Link } from "react-router-dom";
 import AmberImg from "../../Images/Interface-crossEyedGirl.webp"; // Update image path if needed
 import BlankBrain from "/BrainBuddy100px.png";
+import ReactFavicons from "../../Components/ReactFavicon";
+
+
 
 const Amber = () => {
   // Update document title and canonical tag for page-level SEO indexing
   useEffect(() => {
-    document.title = "Amber | UI/UX Design & System Consulting | BrainBuddys";
+    document.title = "Amber | UI/UX Design & System Consulting | Brain Buddy";
     
     // Manage canonical URL
     let canonicalLink = document.querySelector("link[rel='canonical']");
@@ -31,10 +34,13 @@ const Amber = () => {
   ];
 
   return (
+    <>
+    < ReactFavicons />
     <div className="min-h-screen bg-slate-950 text-slate-100 flex flex-col items-center px-4 py-8 relative">
+
       {/* Background Glow Overlay */}
       <div className="absolute top-0 left-1/2 -translate-x-1/2 w-full max-w-4xl h-96 bg-amber-500/10 blur-[120px] pointer-events-none rounded-full"></div>
-
+      
       {/* Header / Navigation */}
       <header className="w-full max-w-4xl flex items-center justify-between mb-12 z-10">
         <Link
@@ -171,6 +177,7 @@ const Amber = () => {
         </p>
       </footer>
     </div>
+    </>
   );
 };
 
