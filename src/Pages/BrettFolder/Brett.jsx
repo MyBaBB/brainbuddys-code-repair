@@ -50,7 +50,7 @@ const Brett = () => {
           <div className="flex items-center gap-3">
             {/* Contact Button */}
             <a
-              href="https://contact.mybabb.com/contactbrett"
+              href="https://contact.mybabb.com/"
               target="_blank"
               rel="noopener noreferrer"
               className="px-6 py-2 rounded-xl bg-slate-900/90 border border-amber-400/40 hover:border-amber-400 text-amber-300 hover:bg-amber-400/10 font-bold text-sm transition-all shadow-md active:scale-95"
@@ -79,6 +79,8 @@ const Brett = () => {
 
             {/* Profile Image with Status Indicator */}
             <div className="relative group flex-shrink-0">
+
+              <a href="https://contact.mybabb.com">
               <div className="w-48 h-48 sm:w-56 sm:h-56 rounded-2xl overflow-hidden border-2 border-amber-400/40 shadow-xl transition-transform duration-300 group-hover:scale-[1.02]">
                 <img
                   src={MeArizona}
@@ -86,6 +88,7 @@ const Brett = () => {
                   className="w-full h-full object-cover"
                 />
               </div>
+              </a>
               <div className="absolute -bottom-3 -right-3 bg-slate-900 border border-slate-700 rounded-full px-3 py-1 flex items-center gap-2 shadow-lg">
                 <span className="w-3 h-3 rounded-full bg-emerald-500 animate-pulse"></span>
                 <span className="text-xs font-bold text-emerald-400 uppercase tracking-wider">

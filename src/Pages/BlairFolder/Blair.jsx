@@ -84,6 +84,7 @@ const Blair = () => {
 
           {/* Profile Image with Status Indicator */}
           <div className="relative group flex-shrink-0">
+            <a href="https://contact.mybabb.com/contactblair"> 
             <div className="w-48 h-48 sm:w-56 sm:h-56 rounded-2xl overflow-hidden border-2 border-amber-400/40 shadow-xl transition-transform duration-300 group-hover:scale-[1.02]">
               <img
                 src={TurquoiseCross}
@@ -91,6 +92,8 @@ const Blair = () => {
                 className="w-full h-full object-cover"
               />
             </div>
+            </a>
+
             <div className="absolute -bottom-3 -right-3 bg-slate-900 border border-slate-700 rounded-full px-3 py-1 flex items-center gap-2 shadow-lg">
               <span className="w-3 h-3 rounded-full bg-emerald-500 animate-pulse"></span>
               <span className="text-xs font-bold text-emerald-400 uppercase tracking-wider">
