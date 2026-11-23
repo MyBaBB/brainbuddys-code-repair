@@ -53,7 +53,7 @@ const Bruce = () => {
           <div className="flex items-center gap-3">
             {/* Contact Button */}
             <a
-              href="https://contact.mybabb.com"
+              href="https://contact.mybabb.com/contactbruce"
               target="_blank"
               rel="noopener noreferrer"
               className="px-6 py-2 rounded-xl bg-slate-900/90 border border-amber-400/40 hover:border-amber-400 text-amber-300 hover:bg-amber-400/10 font-bold text-sm transition-all shadow-md active:scale-95"
